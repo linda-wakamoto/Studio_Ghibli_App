@@ -1,0 +1,36 @@
+{
+  "tmdb_id": 83389,
+  "title": "From Up on Poppy Hill",
+  "release_date": "2011-07-16",
+  "runtime": 91,
+  "genres": [
+    "Animation",
+    "Drama"
+  ],
+  "rating": 7.525,
+  "vote_count": 1929,
+  "budget": 22000000,
+  "revenue": 61037844,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Mitsubishi",
+    "Kodansha",
+    "KDDI",
+    "Hakuhodo DY Media Partners"
+  ],
+  "cast": [
+    "Masami Nagasawa",
+    "Junichi Okada",
+    "Keiko Takeshita",
+    "Yuriko Ishida",
+    "Rumi Hiiragi"
+  ],
+  "crew": [
+    "Hiromi Sasaki",
+    "Rie Matsubara",
+    "Keiko Kadokawa",
+    "Koji Kasamatsu",
+    "Koji Kasamatsu"
+  ]
+}

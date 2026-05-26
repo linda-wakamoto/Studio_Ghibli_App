@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 128,
+  "title": "Princess Mononoke",
+  "release_date": "1997-07-12",
+  "runtime": 134,
+  "genres": [
+    "Adventure",
+    "Fantasy",
+    "Animation"
+  ],
+  "rating": 8.323,
+  "vote_count": 8919,
+  "budget": 23500000,
+  "revenue": 176506186,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "dentsu",
+    "Tokuma Shoten",
+    "Nippon Television Network Corporation",
+    "Nibariki"
+  ],
+  "cast": [
+    "Yoji Matsuda",
+    "Yuriko Ishida",
+    "Yuko Tanaka",
+    "Kaoru Kobayashi",
+    "Masahiko Nishimura"
+  ],
+  "crew": [
+    "Takeshi Seyama",
+    "Hayao Miyazaki",
+    "Yutaka Narita",
+    "Satoshi Kuroda",
+    "Kazuo Oga"
+  ]
+}

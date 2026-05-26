@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 149871,
+  "title": "The Tale of the Princess Kaguya",
+  "release_date": "2013-11-23",
+  "runtime": 137,
+  "genres": [
+    "Animation",
+    "Drama",
+    "Fantasy"
+  ],
+  "rating": 8.093,
+  "vote_count": 1969,
+  "budget": 49300000,
+  "revenue": 24366656,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Hakuhodo DY Media Partners",
+    "KDDI",
+    "Mitsubishi Shoji",
+    "Nippon Television Network Corporation"
+  ],
+  "cast": [
+    "Aki Asakura",
+    "Takeo Chii",
+    "Nobuko Miyamoto",
+    "Kengo Kora",
+    "Atsuko Takahata"
+  ],
+  "crew": [
+    "Yukari Hashimoto",
+    "Seiji Okuda",
+    "Ryoichi Fukuyama",
+    "Yukiko Kakita",
+    "Naoya Fujimaki"
+  ]
+}

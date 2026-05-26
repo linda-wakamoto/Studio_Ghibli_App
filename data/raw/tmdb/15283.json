@@ -1,0 +1,33 @@
+{
+  "tmdb_id": 15283,
+  "title": "Pom Poko",
+  "release_date": "1994-07-16",
+  "runtime": 119,
+  "genres": [
+    "Adventure",
+    "Animation",
+    "Fantasy"
+  ],
+  "rating": 7.173,
+  "vote_count": 1192,
+  "budget": 0,
+  "revenue": 0,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli"
+  ],
+  "cast": [
+    "Makoto Nonomura",
+    "Nijiko Kiyokawa",
+    "Shigeru Izumiya",
+    "Norihei Miki",
+    "Yuriko Ishida"
+  ],
+  "crew": [
+    "Isao Takahata",
+    "Toshio Suzuki",
+    "Takeshi Seyama",
+    "Kazuo Oga",
+    "Hayao Miyazaki"
+  ]
+}

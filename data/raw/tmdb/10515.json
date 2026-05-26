@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 10515,
+  "title": "Castle in the Sky",
+  "release_date": "1986-08-02",
+  "runtime": 125,
+  "genres": [
+    "Adventure",
+    "Fantasy",
+    "Animation",
+    "Action",
+    "Family"
+  ],
+  "rating": 7.97,
+  "vote_count": 4657,
+  "budget": 3000000,
+  "revenue": 5228752,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Nibariki",
+    "Tokuma Shoten"
+  ],
+  "cast": [
+    "Keiko Yokozawa",
+    "Mayumi Tanaka",
+    "Minori Terada",
+    "Kotoe Hatsui",
+    "Fujio Tokita"
+  ],
+  "crew": [
+    "Hayao Miyazaki",
+    "Isao Takahata",
+    "Yasuyoshi Tokuma",
+    "Yoshihiro Kasahara",
+    "Joe Hisaishi"
+  ]
+}

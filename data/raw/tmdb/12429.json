@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 12429,
+  "title": "Ponyo",
+  "release_date": "2008-07-19",
+  "runtime": 100,
+  "genres": [
+    "Animation",
+    "Fantasy",
+    "Family"
+  ],
+  "rating": 7.753,
+  "vote_count": 4780,
+  "budget": 34000000,
+  "revenue": 202404009,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "TOHO",
+    "Nippon Television Network Corporation",
+    "dentsu",
+    "Hakuhodo DY Media Partners"
+  ],
+  "cast": [
+    "Yuria Kozuki",
+    "Hiroki Doi",
+    "George Tokoro",
+    "Tomoko Yamaguchi",
+    "Yuki Amami"
+  ],
+  "crew": [
+    "Mika Yamaguchi",
+    "Eriko Kimura",
+    "Shuji Inoue",
+    "Noboru Yoshida",
+    "Takeshi Seyama"
+  ]
+}

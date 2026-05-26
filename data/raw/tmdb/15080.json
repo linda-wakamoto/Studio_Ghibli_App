@@ -1,0 +1,36 @@
+{
+  "tmdb_id": 15080,
+  "title": "Only Yesterday",
+  "release_date": "1991-07-20",
+  "runtime": 119,
+  "genres": [
+    "Animation",
+    "Drama",
+    "Romance"
+  ],
+  "rating": 7.391,
+  "vote_count": 1239,
+  "budget": 0,
+  "revenue": 473110,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Tokuma Shoten",
+    "Nippon Television Network Corporation",
+    "Hakuhodo"
+  ],
+  "cast": [
+    "Miki Imai",
+    "Yoko Honna",
+    "Toshiro Yanagiba",
+    "Yorie Yamashita",
+    "Yuki Minowa"
+  ],
+  "crew": [
+    "Isao Takahata",
+    "Hayao Miyazaki",
+    "Katsu Hoshi",
+    "Takeshi Seyama",
+    "Hotaru Okamoto"
+  ]
+}

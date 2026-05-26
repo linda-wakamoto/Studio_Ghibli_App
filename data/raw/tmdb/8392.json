@@ -1,0 +1,35 @@
+{
+  "tmdb_id": 8392,
+  "title": "My Neighbor Totoro",
+  "release_date": "1988-04-16",
+  "runtime": 86,
+  "genres": [
+    "Fantasy",
+    "Animation",
+    "Family"
+  ],
+  "rating": 8.061,
+  "vote_count": 8756,
+  "budget": 3700000,
+  "revenue": 41000000,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Nibariki",
+    "Tokuma Shoten"
+  ],
+  "cast": [
+    "Noriko Hidaka",
+    "Chika Sakamoto",
+    "Hitoshi Takagi",
+    "Shigesato Itoi",
+    "Sumi Shimamoto"
+  ],
+  "crew": [
+    "Hayao Miyazaki",
+    "Tooru Hara",
+    "Yasuyoshi Tokuma",
+    "Joe Hisaishi",
+    "Takeshi Seyama"
+  ]
+}

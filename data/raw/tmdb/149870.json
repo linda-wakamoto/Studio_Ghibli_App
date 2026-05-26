@@ -1,0 +1,38 @@
+{
+  "tmdb_id": 149870,
+  "title": "The Wind Rises",
+  "release_date": "2013-07-20",
+  "runtime": 126,
+  "genres": [
+    "Animation",
+    "Drama",
+    "History",
+    "Romance"
+  ],
+  "rating": 7.792,
+  "vote_count": 3343,
+  "budget": 30000000,
+  "revenue": 117932401,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Nippon Television Network Corporation",
+    "dentsu",
+    "Hakuhodo DY Media Partners",
+    "The Walt Disney Company (Japan)"
+  ],
+  "cast": [
+    "Hideaki Anno",
+    "Hidetoshi Nishijima",
+    "Miori Takimoto",
+    "Masahiko Nishimura",
+    "Stephen Alpert"
+  ],
+  "crew": [
+    "Atsuko Tanaka",
+    "Eiji Yamamori",
+    "Taichi Furumata",
+    "Atsushi Tamura",
+    "Yoshimi Itazu"
+  ]
+}

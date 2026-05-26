@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 11621,
+  "title": "Porco Rosso",
+  "release_date": "1992-07-18",
+  "runtime": 93,
+  "genres": [
+    "Animation",
+    "Adventure",
+    "Fantasy"
+  ],
+  "rating": 7.797,
+  "vote_count": 3695,
+  "budget": 9200000,
+  "revenue": 44600000,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "TOHO",
+    "Tokuma Shoten",
+    "Nibariki",
+    "Mitsubishi"
+  ],
+  "cast": [
+    "Sh\u016bichir\u014d Moriyama",
+    "Tokiko Kato",
+    "Bunshi Katsura VI",
+    "Tsunehiko Kamij\u00f4",
+    "Akemi Okamura"
+  ],
+  "crew": [
+    "Hayao Miyazaki",
+    "Hayao Miyazaki",
+    "Atsushi Okui",
+    "Joe Hisaishi",
+    "Sokai Tokuma"
+  ]
+}

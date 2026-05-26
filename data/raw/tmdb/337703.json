@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 337703,
+  "title": "The Red Turtle",
+  "release_date": "2016-03-27",
+  "runtime": 81,
+  "genres": [
+    "Animation",
+    "Drama",
+    "Fantasy",
+    "Family"
+  ],
+  "rating": 7.442,
+  "vote_count": 1362,
+  "budget": 0,
+  "revenue": 921974,
+  "language": "fr",
+  "production_companies": [
+    "Wild Bunch",
+    "Studio Ghibli",
+    "Why Not Productions",
+    "CN4 Productions",
+    "Belvision"
+  ],
+  "cast": [
+    "Tom Hudson",
+    "Baptiste Goy",
+    "Axel Devillers",
+    "Barbara Beretta"
+  ],
+  "crew": [
+    "Michael Dudok de Wit",
+    "Laurent Perez del Mar",
+    "Bertrand Schutz",
+    "C\u00e9line K\u00e9l\u00e9pikis",
+    "Tanguy Olivier"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "tmdb_id": 37797,
+  "title": "Whisper of the Heart",
+  "release_date": "1995-07-15",
+  "runtime": 111,
+  "genres": [
+    "Animation",
+    "Drama",
+    "Family"
+  ],
+  "rating": 7.949,
+  "vote_count": 2263,
+  "budget": 0,
+  "revenue": 0,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Nippon Television Network Corporation",
+    "Tokuma Shoten",
+    "Hakuhodo"
+  ],
+  "cast": [
+    "Yoko Honna",
+    "Issey Takahashi",
+    "Takashi Tachibana",
+    "Shigeru Muroi",
+    "Minami Takayama"
+  ],
+  "crew": [
+    "Yoshifumi Kondo",
+    "Yuji Nomi",
+    "Takeshi Seyama",
+    "Hayao Miyazaki",
+    "Toshio Suzuki"
+  ]
+}

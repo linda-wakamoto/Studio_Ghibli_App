@@ -1,0 +1,35 @@
+{
+  "tmdb_id": 683127,
+  "title": "Earwig and the Witch",
+  "release_date": "2021-02-03",
+  "runtime": 83,
+  "genres": [
+    "Animation",
+    "Fantasy",
+    "Family"
+  ],
+  "rating": 5.887,
+  "vote_count": 292,
+  "budget": 0,
+  "revenue": 842744,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "NHK",
+    "NHK Enterprises"
+  ],
+  "cast": [
+    "Kokoro Hirasawa",
+    "Shinobu Terajima",
+    "Gaku Hamada",
+    "Sherina Munaf",
+    "Etsushi Toyokawa"
+  ],
+  "crew": [
+    "Keisuke Tsuchihashi",
+    "Koji Hoshino",
+    "Isao Yoshikuni",
+    "Yusuke Hirota",
+    "Keiko Niwa"
+  ]
+}

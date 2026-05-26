@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 51739,
+  "title": "Arrietty",
+  "release_date": "2010-07-16",
+  "runtime": 94,
+  "genres": [
+    "Fantasy",
+    "Animation",
+    "Family"
+  ],
+  "rating": 7.667,
+  "vote_count": 3137,
+  "budget": 23000000,
+  "revenue": 149660003,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Hakuhodo DY Media Partners",
+    "Mitsubishi Shoji",
+    "dentsu",
+    "TOHO"
+  ],
+  "cast": [
+    "Mirai Shida",
+    "Ryunosuke Kamiki",
+    "Tomokazu Miura",
+    "Keiko Takeshita",
+    "Kirin Kiki"
+  ],
+  "crew": [
+    "Hiromasa Yonebayashi",
+    "Toshio Suzuki",
+    "Rie Matsubara",
+    "Masahiko Kubo",
+    "Hayao Miyazaki"
+  ]
+}

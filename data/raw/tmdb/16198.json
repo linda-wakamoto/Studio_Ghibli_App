@@ -1,0 +1,36 @@
+{
+  "tmdb_id": 16198,
+  "title": "My Neighbors the Yamadas",
+  "release_date": "1999-07-17",
+  "runtime": 104,
+  "genres": [
+    "Animation",
+    "Comedy",
+    "Family"
+  ],
+  "rating": 7.0,
+  "vote_count": 605,
+  "budget": 15270000,
+  "revenue": 11910000,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Nippon Television Network Corporation",
+    "Tokuma Shoten",
+    "Hakuhodo"
+  ],
+  "cast": [
+    "Hayato Isohata",
+    "Masako Araki",
+    "Naomi Uno",
+    "Toru Masuoka",
+    "Yukiji Asaoka"
+  ],
+  "crew": [
+    "Isao Takahata",
+    "Takashi Shoji",
+    "Yasuyoshi Tokuma",
+    "Seiichiro Ujiie",
+    "Akiko Yano"
+  ]
+}

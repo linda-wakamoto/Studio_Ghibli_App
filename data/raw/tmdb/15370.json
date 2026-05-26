@@ -1,0 +1,39 @@
+{
+  "tmdb_id": 15370,
+  "title": "The Cat Returns",
+  "release_date": "2002-07-19",
+  "runtime": 75,
+  "genres": [
+    "Adventure",
+    "Fantasy",
+    "Animation",
+    "Drama",
+    "Family"
+  ],
+  "rating": 7.126,
+  "vote_count": 2435,
+  "budget": 0,
+  "revenue": 54016370,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Hakuhodo DY Media Partners",
+    "Mitsubishi",
+    "Nippon Television Network Corporation",
+    "TOHO"
+  ],
+  "cast": [
+    "Chizuru Ikewaki",
+    "Yoshihiko Hakamada",
+    "Aki Maeda",
+    "Tetsu Watanabe",
+    "Yousuke Saito"
+  ],
+  "crew": [
+    "Yuji Nomi",
+    "Toshio Suzuki",
+    "Nozomu Takahashi",
+    "Seiichiro Ujiie",
+    "Reiko Yoshida"
+  ]
+}

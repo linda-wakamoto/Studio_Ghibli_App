@@ -1,0 +1,795 @@
+[
+  {
+    "title":"Castle in the Sky",
+    "release_date":"1986-08-02",
+    "runtime":125,
+    "genres":[
+      "Adventure",
+      "Fantasy",
+      "Animation",
+      "Action",
+      "Family"
+    ],
+    "tmdb_rating":7.97,
+    "vote_count":4657,
+    "budget":3000000,
+    "revenue":5228752,
+    "cast":[
+      "Keiko Yokozawa",
+      "Mayumi Tanaka",
+      "Minori Terada",
+      "Kotoe Hatsui",
+      "Fujio Tokita"
+    ],
+    "crew":[
+      "Hayao Miyazaki",
+      "Isao Takahata",
+      "Yasuyoshi Tokuma",
+      "Yoshihiro Kasahara",
+      "Joe Hisaishi"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Isao Takahata",
+    "description":"The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
+    "people":"['Lusheeta Toel Ul Laputa', 'Pazu', 'Captain Dola', 'Colonel Muska', 'General Mouro', 'Uncle Pom', 'Laputian Robot']",
+    "locations":"['Laputa', 'Gondoa', \"Pazu's Mines\", 'Tedis']",
+    "species":"['Human', 'Dragon']",
+    "vehicles":"['Air Destroyer Goliath']"
+  },
+  {
+    "title":"Porco Rosso",
+    "release_date":"1992-07-18",
+    "runtime":93,
+    "genres":[
+      "Animation",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tmdb_rating":7.797,
+    "vote_count":3695,
+    "budget":9200000,
+    "revenue":44600000,
+    "cast":[
+      "Sh\u016bichir\u014d Moriyama",
+      "Tokiko Kato",
+      "Bunshi Katsura VI",
+      "Tsunehiko Kamij\u00f4",
+      "Akemi Okamura"
+    ],
+    "crew":[
+      "Hayao Miyazaki",
+      "Hayao Miyazaki",
+      "Atsushi Okui",
+      "Joe Hisaishi",
+      "Sokai Tokuma"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"Porco Rosso, known in Japan as Crimson Pig (Kurenai no Buta) is the sixth animated film by Hayao Miyazaki and released in 1992. You're introduced to an Italian World War I fighter ace, now living as a freelance bounty hunter chasing 'air pirates' in the Adriatic Sea. He has been given a curse that changed his head to that of a pig. Once called Marco Pagot, he is now known to the world as 'Porco Rosso', Italian for 'Red Pig.'",
+    "people":"[]",
+    "locations":"['Piccolo S.P.A.']",
+    "species":"['Human']",
+    "vehicles":"['Red Wing']"
+  },
+  {
+    "title":"Ponyo",
+    "release_date":"2008-07-19",
+    "runtime":100,
+    "genres":[
+      "Animation",
+      "Fantasy",
+      "Family"
+    ],
+    "tmdb_rating":7.753,
+    "vote_count":4780,
+    "budget":34000000,
+    "revenue":202404009,
+    "cast":[
+      "Yuria Kozuki",
+      "Hiroki Doi",
+      "George Tokoro",
+      "Tomoko Yamaguchi",
+      "Yuki Amami"
+    ],
+    "crew":[
+      "Mika Yamaguchi",
+      "Eriko Kimura",
+      "Shuji Inoue",
+      "Noboru Yoshida",
+      "Takeshi Seyama"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"The son of a sailor, 5-year old Sosuke lives a quiet life on an oceanside cliff with his mother Lisa. One fateful day, he finds a beautiful goldfish trapped in a bottle on the beach and upon rescuing her, names her Ponyo. But she is no ordinary goldfish. The daughter of a masterful wizard and a sea goddess, Ponyo uses her father's magic to transform herself into a young girl and quickly falls in love with Sosuke, but the use of such powerful sorcery causes a dangerous imbalance in the world. As the moon steadily draws nearer to the earth and Ponyo's father sends the ocean's mighty waves to find his daughter, the two children embark on an adventure of a lifetime to save the world and fulfill Ponyo's dreams of becoming human.",
+    "people":"[]",
+    "locations":"['Himawari Nursery School', \"Fujimoto's Underwater Harbor\"]",
+    "species":"['Human']",
+    "vehicles":"[\"Sosuke's Boat\"]"
+  },
+  {
+    "title":"Princess Mononoke",
+    "release_date":"1997-07-12",
+    "runtime":134,
+    "genres":[
+      "Adventure",
+      "Fantasy",
+      "Animation"
+    ],
+    "tmdb_rating":8.323,
+    "vote_count":8919,
+    "budget":23500000,
+    "revenue":176506186,
+    "cast":[
+      "Yoji Matsuda",
+      "Yuriko Ishida",
+      "Yuko Tanaka",
+      "Kaoru Kobayashi",
+      "Masahiko Nishimura"
+    ],
+    "crew":[
+      "Takeshi Seyama",
+      "Hayao Miyazaki",
+      "Yutaka Narita",
+      "Satoshi Kuroda",
+      "Kazuo Oga"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"Ashitaka, a prince of the disappearing Ainu tribe, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.",
+    "people":"['Ashitaka', 'San', 'Yakul', 'Shishigami', 'Moro', 'Eboshi', 'Jigo', 'Kohroku', 'Gonza', 'Hii-sama']",
+    "locations":"['Irontown', 'Forest', 'Gutiokipanja']",
+    "species":"['Deer', 'God', 'Human', 'Spirit']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Spirited Away",
+    "release_date":"2001-07-20",
+    "runtime":125,
+    "genres":[
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "tmdb_rating":8.533,
+    "vote_count":18215,
+    "budget":19000000,
+    "revenue":274925095,
+    "cast":[
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki",
+      "Takashi Naito",
+      "Yasuko Sawaguchi"
+    ],
+    "crew":[
+      "Hayao Miyazaki",
+      "Toshio Suzuki",
+      "Yasuyoshi Tokuma",
+      "Joe Hisaishi",
+      "Atsushi Okui"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"Spirited Away is an Oscar winning Japanese animated film about a ten year old girl who wanders away from her parents along a path that leads to a world ruled by strange and unusual monster-like animals. Her parents have been changed into pigs along with others inside a bathhouse full of these creatures. Will she ever see the world how it once was?",
+    "people":"['Chihiro Ogino']",
+    "locations":"[\"Zeniba's Cottage\", 'Bathhouse']",
+    "species":"['Human', 'Dragon']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"The Wind Rises",
+    "release_date":"2013-07-20",
+    "runtime":126,
+    "genres":[
+      "Animation",
+      "Drama",
+      "History",
+      "Romance"
+    ],
+    "tmdb_rating":7.792,
+    "vote_count":3343,
+    "budget":30000000,
+    "revenue":117932401,
+    "cast":[
+      "Hideaki Anno",
+      "Hidetoshi Nishijima",
+      "Miori Takimoto",
+      "Masahiko Nishimura",
+      "Stephen Alpert"
+    ],
+    "crew":[
+      "Atsuko Tanaka",
+      "Eiji Yamamori",
+      "Taichi Furumata",
+      "Atsushi Tamura",
+      "Yoshimi Itazu"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"A lifelong love of flight inspires Japanese aviation engineer Jiro Horikoshi, whose storied career includes the creation of the A-6M World War II fighter plane.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"The Tale of the Princess Kaguya",
+    "release_date":"2013-11-23",
+    "runtime":137,
+    "genres":[
+      "Animation",
+      "Drama",
+      "Fantasy"
+    ],
+    "tmdb_rating":8.093,
+    "vote_count":1969,
+    "budget":49300000,
+    "revenue":24366656,
+    "cast":[
+      "Aki Asakura",
+      "Takeo Chii",
+      "Nobuko Miyamoto",
+      "Kengo Kora",
+      "Atsuko Takahata"
+    ],
+    "crew":[
+      "Yukari Hashimoto",
+      "Seiji Okuda",
+      "Ryoichi Fukuyama",
+      "Yukiko Kakita",
+      "Naoya Fujimaki"
+    ],
+    "language":"ja",
+    "director":"Isao Takahata",
+    "producer":"Yoshiaki Nishimura",
+    "description":"A bamboo cutter named Sanuki no Miyatsuko discovers a miniature girl inside a glowing bamboo shoot. Believing her to be a divine presence, he and his wife decide to raise her as their own, calling her 'Princess'.",
+    "people":"[]",
+    "locations":"['Bamboo Forest']",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Only Yesterday",
+    "release_date":"1991-07-20",
+    "runtime":119,
+    "genres":[
+      "Animation",
+      "Drama",
+      "Romance"
+    ],
+    "tmdb_rating":7.391,
+    "vote_count":1239,
+    "budget":0,
+    "revenue":473110,
+    "cast":[
+      "Miki Imai",
+      "Yoko Honna",
+      "Toshiro Yanagiba",
+      "Yorie Yamashita",
+      "Yuki Minowa"
+    ],
+    "crew":[
+      "Isao Takahata",
+      "Hayao Miyazaki",
+      "Katsu Hoshi",
+      "Takeshi Seyama",
+      "Hotaru Okamoto"
+    ],
+    "language":"ja",
+    "director":"Isao Takahata",
+    "producer":"Toshio Suzuki",
+    "description":"It\u2019s 1982, and Taeko is 27 years old, unmarried, and has lived her whole life in Tokyo. She decides to visit her family in the countryside, and as the train travels through the night, memories flood back of her younger years: the first immature stirrings of romance, the onset of puberty, and the frustrations of math and boys. At the station she is met by young farmer Toshio, and the encounters with him begin to reconnect her to forgotten longings. In lyrical switches between the present and the past, Taeko contemplates the arc of her life, and wonders if she has been true to the dreams of her childhood self.",
+    "people":"[]",
+    "locations":"[\"Taeko's House\"]",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Pom Poko",
+    "release_date":"1994-07-16",
+    "runtime":119,
+    "genres":[
+      "Adventure",
+      "Animation",
+      "Fantasy"
+    ],
+    "tmdb_rating":7.173,
+    "vote_count":1192,
+    "budget":0,
+    "revenue":0,
+    "cast":[
+      "Makoto Nonomura",
+      "Nijiko Kiyokawa",
+      "Shigeru Izumiya",
+      "Norihei Miki",
+      "Yuriko Ishida"
+    ],
+    "crew":[
+      "Isao Takahata",
+      "Toshio Suzuki",
+      "Takeshi Seyama",
+      "Kazuo Oga",
+      "Hayao Miyazaki"
+    ],
+    "language":"ja",
+    "director":"Isao Takahata",
+    "producer":"Toshio Suzuki",
+    "description":"As the human city development encroaches on the raccoon population's forest and meadow habitat, the raccoons find themselves faced with the very real possibility of extinction. In response, the raccoons engage in a desperate struggle to stop the construction and preserve their home.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"The Cat Returns",
+    "release_date":"2002-07-19",
+    "runtime":75,
+    "genres":[
+      "Adventure",
+      "Fantasy",
+      "Animation",
+      "Drama",
+      "Family"
+    ],
+    "tmdb_rating":7.126,
+    "vote_count":2435,
+    "budget":0,
+    "revenue":54016370,
+    "cast":[
+      "Chizuru Ikewaki",
+      "Yoshihiko Hakamada",
+      "Aki Maeda",
+      "Tetsu Watanabe",
+      "Yousuke Saito"
+    ],
+    "crew":[
+      "Yuji Nomi",
+      "Toshio Suzuki",
+      "Nozomu Takahashi",
+      "Seiichiro Ujiie",
+      "Reiko Yoshida"
+    ],
+    "language":"ja",
+    "director":"Hiroyuki Morita",
+    "producer":"Toshio Suzuki",
+    "description":"Haru, a schoolgirl bored by her ordinary routine, saves the life of an unusual cat and suddenly her world is transformed beyond anything she ever imagined. The Cat King rewards her good deed with a flurry of presents, including a very shocking proposal of marriage to his son! Haru embarks on an unexpected journey to the Kingdom of Cats where her eyes are opened to a whole other world.",
+    "people":"[]",
+    "locations":"['The Cat Kingdom']",
+    "species":"['Cat', 'Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"My Neighbors the Yamadas",
+    "release_date":"1999-07-17",
+    "runtime":104,
+    "genres":[
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "tmdb_rating":7.0,
+    "vote_count":605,
+    "budget":15270000,
+    "revenue":11910000,
+    "cast":[
+      "Hayato Isohata",
+      "Masako Araki",
+      "Naomi Uno",
+      "Toru Masuoka",
+      "Yukiji Asaoka"
+    ],
+    "crew":[
+      "Isao Takahata",
+      "Takashi Shoji",
+      "Yasuyoshi Tokuma",
+      "Seiichiro Ujiie",
+      "Akiko Yano"
+    ],
+    "language":"ja",
+    "director":"Isao Takahata",
+    "producer":"Toshio Suzuki",
+    "description":"The Yamadas are a typical middle class Japanese family in urban Tokyo and this film shows us a variety of episodes of their lives. With tales that range from the humourous to the heartbreaking, we see this family cope with life's little conflicts, problems and joys in their own way.",
+    "people":"[]",
+    "locations":"['Bamboo Forest']",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Kiki's Delivery Service",
+    "release_date":"1989-07-29",
+    "runtime":103,
+    "genres":[
+      "Animation",
+      "Family",
+      "Fantasy"
+    ],
+    "tmdb_rating":7.833,
+    "vote_count":4535,
+    "budget":6900000,
+    "revenue":4493017,
+    "cast":[
+      "Minami Takayama",
+      "Rei Sakuma",
+      "Kappei Yamaguchi",
+      "Keiko Toda",
+      "Mieko Nobusawa"
+    ],
+    "crew":[
+      "Eiko Kadono",
+      "Hayao Miyazaki",
+      "Mikihiko Tsuzuki",
+      "Hayao Miyazaki",
+      "Yasuyoshi Tokuma"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Hayao Miyazaki",
+    "description":"A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service.",
+    "people":"['Kiki', 'Jiji', 'Osono', 'Ursula', 'Tombo', 'Madame']",
+    "locations":"[\"Ursula's Log Cabin\", 'Karikiya', 'Koriko']",
+    "species":"['Cat', 'Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"When Marnie Was There",
+    "release_date":"2014-07-19",
+    "runtime":103,
+    "genres":[
+      "Animation",
+      "Drama",
+      "Family"
+    ],
+    "tmdb_rating":7.936,
+    "vote_count":1951,
+    "budget":0,
+    "revenue":34949567,
+    "cast":[
+      "Sara Takatsuki",
+      "Kasumi Arimura",
+      "Nanako Matsushima",
+      "Susumu Terajima",
+      "Toshie Negishi"
+    ],
+    "crew":[
+      "Tamaki Kojo",
+      "Masashi Ando",
+      "Hiromasa Yonebayashi",
+      "Joan G. Robinson",
+      "Keiko Niwa"
+    ],
+    "language":"ja",
+    "director":"Hiromasa Yonebayashi",
+    "producer":"Yoshiaki Nishimura",
+    "description":"The film follows Anna Sasaki living with her relatives in the seaside town. Anna comes across a nearby abandoned mansion, where she meets Marnie, a mysterious girl who asks her to promise to keep their secrets from everyone. As the summer progresses, Anna spends more time with Marnie, and eventually Anna learns the truth about her family and foster care.",
+    "people":"[]",
+    "locations":"['The Marsh House']",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"The Red Turtle",
+    "release_date":"2016-03-27",
+    "runtime":81,
+    "genres":[
+      "Animation",
+      "Drama",
+      "Fantasy",
+      "Family"
+    ],
+    "tmdb_rating":7.442,
+    "vote_count":1362,
+    "budget":0,
+    "revenue":921974,
+    "cast":[
+      "Tom Hudson",
+      "Baptiste Goy",
+      "Axel Devillers",
+      "Barbara Beretta"
+    ],
+    "crew":[
+      "Michael Dudok de Wit",
+      "Laurent Perez del Mar",
+      "Bertrand Schutz",
+      "C\u00e9line K\u00e9l\u00e9pikis",
+      "Tanguy Olivier"
+    ],
+    "language":"fr",
+    "director":"Micha\u00ebl Dudok de Wit",
+    "producer":"Toshio Suzuki, Isao Takahata, Vincent Maraval, Pascal Caucheteux, Gr\u00e9goire Sorlat",
+    "description":"A man set adrift by a storm wakes up on a beach. He discovers that he is on a deserted island with plenty of fresh water, fruit and a dense bamboo forest. He builds a raft from bamboo and attempts to sail away, but his raft is destroyed by an unseen monster in the sea, forcing him back to the island. He tries again with another, larger raft, but is again foiled by the creature. A third attempt again ends with the raft destroyed, but this time he is confronted by a giant red turtle, which stares at him, and forces him back to the island.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"[]",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Whisper of the Heart",
+    "release_date":"1995-07-15",
+    "runtime":111,
+    "genres":[
+      "Animation",
+      "Drama",
+      "Family"
+    ],
+    "tmdb_rating":7.949,
+    "vote_count":2263,
+    "budget":0,
+    "revenue":0,
+    "cast":[
+      "Yoko Honna",
+      "Issey Takahashi",
+      "Takashi Tachibana",
+      "Shigeru Muroi",
+      "Minami Takayama"
+    ],
+    "crew":[
+      "Yoshifumi Kondo",
+      "Yuji Nomi",
+      "Takeshi Seyama",
+      "Hayao Miyazaki",
+      "Toshio Suzuki"
+    ],
+    "language":"ja",
+    "director":"Yoshifumi Kond\u014d",
+    "producer":"Toshio Suzuki",
+    "description":"Shizuku lives a simple life, dominated by her love for stories and writing. One day she notices that all the library books she has have been previously checked out by the same person: 'Seiji Amasawa'. Curious as to who he is, Shizuku meets a boy her age whom she finds infuriating, but discovers to her shock that he is her 'Prince of Books'. As she grows closer to him, she realises that he merely read all those books to bring himself closer to her. The boy Seiji aspires to be a violin maker in Italy, and it is his dreams that make Shizuku realise that she has no clear path for her life. Knowing that her strength lies in writing, she tests her talents by writing a story about Baron, a cat statuette belonging to Seiji's grandfather.",
+    "people":"[]",
+    "locations":"[\"Shizuku's Apartment\"]",
+    "species":"['Cat', 'Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Tales from Earthsea",
+    "release_date":"2006-07-29",
+    "runtime":115,
+    "genres":[
+      "Animation",
+      "Fantasy",
+      "Adventure"
+    ],
+    "tmdb_rating":6.532,
+    "vote_count":1479,
+    "budget":22000000,
+    "revenue":68625104,
+    "cast":[
+      "Junichi Okada",
+      "Aoi Teshima",
+      "Bunta Sugawara",
+      "Yuko Tanaka",
+      "Teruyuki Kagawa"
+    ],
+    "crew":[
+      "Hiromi Sasaki",
+      "Rie Matsubara",
+      "Tsutomu Kawahigashi",
+      "Keiko Kadokawa",
+      "Hajime Takagi"
+    ],
+    "language":"ja",
+    "director":"Gor\u014d Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"Something bizarre has come over the land. The kingdom is deteriorating. People are beginning to act strange... What's even more strange is that people are beginning to see dragons, which shouldn't enter the world of humans. Due to all these bizarre events, Ged, a wandering wizard, is investigating the cause. During his journey, he meets Prince Arren, a young distraught teenage boy. While Arren may look like a shy young teen, he has a severe dark side, which grants him strength, hatred, ruthlessness and has no mercy, especially when it comes to protecting Teru. For the witch Kumo this is a perfect opportunity. She can use the boy's 'fears' against the very one who would help him, Ged.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Howl's Moving Castle",
+    "release_date":"2004-09-09",
+    "runtime":119,
+    "genres":[
+      "Fantasy",
+      "Animation",
+      "Adventure"
+    ],
+    "tmdb_rating":8.386,
+    "vote_count":10995,
+    "budget":24000000,
+    "revenue":236049757,
+    "cast":[
+      "Chieko Baisho",
+      "Takuya Kimura",
+      "Akihiro Miwa",
+      "Tatsuya Gash\u00fbin",
+      "Ryunosuke Kamiki"
+    ],
+    "crew":[
+      "Hayao Miyazaki",
+      "Atsushi Okui",
+      "Hayao Miyazaki",
+      "Diana Wynne Jones",
+      "Joe Hisaishi"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"When Sophie, a shy young woman, is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking home.",
+    "people":"[]",
+    "locations":"['Ingary']",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Arrietty",
+    "release_date":"2010-07-16",
+    "runtime":94,
+    "genres":[
+      "Fantasy",
+      "Animation",
+      "Family"
+    ],
+    "tmdb_rating":7.667,
+    "vote_count":3137,
+    "budget":23000000,
+    "revenue":149660003,
+    "cast":[
+      "Mirai Shida",
+      "Ryunosuke Kamiki",
+      "Tomokazu Miura",
+      "Keiko Takeshita",
+      "Kirin Kiki"
+    ],
+    "crew":[
+      "Hiromasa Yonebayashi",
+      "Toshio Suzuki",
+      "Rie Matsubara",
+      "Masahiko Kubo",
+      "Hayao Miyazaki"
+    ],
+    "language":"ja",
+    "director":"Hiromasa Yonebayashi",
+    "producer":"Toshio Suzuki",
+    "description":"14-year-old Arrietty and the rest of the Clock family live in peaceful anonymity as they make their own home from items 'borrowed' from the house's human inhabitants. However, life changes for the Clocks when a human boy discovers Arrietty.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"['Cat', 'Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Earwig and the Witch",
+    "release_date":"2021-02-03",
+    "runtime":83,
+    "genres":[
+      "Animation",
+      "Fantasy",
+      "Family"
+    ],
+    "tmdb_rating":5.887,
+    "vote_count":292,
+    "budget":0,
+    "revenue":842744,
+    "cast":[
+      "Kokoro Hirasawa",
+      "Shinobu Terajima",
+      "Gaku Hamada",
+      "Sherina Munaf",
+      "Etsushi Toyokawa"
+    ],
+    "crew":[
+      "Keisuke Tsuchihashi",
+      "Koji Hoshino",
+      "Isao Yoshikuni",
+      "Yusuke Hirota",
+      "Keiko Niwa"
+    ],
+    "language":"ja",
+    "director":"Gor\u014d Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"An orphan girl, Earwig, is adopted by a witch and comes home to a spooky house filled with mystery and magic.",
+    "people":"[]",
+    "locations":"[\"St. Morwald's Home for Children\"]",
+    "species":"['Cat', 'Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"Grave of the Fireflies",
+    "release_date":"2005-11-01",
+    "runtime":148,
+    "genres":[
+      "Drama"
+    ],
+    "tmdb_rating":7.921,
+    "vote_count":114,
+    "budget":0,
+    "revenue":0,
+    "cast":[
+      "Hoshi Ishida",
+      "Mao Sasaki",
+      "Ikki Sawamura",
+      "Yui Natsukawa",
+      "Nanako Matsushima"
+    ],
+    "crew":[
+      "T\u014dya Sat\u014d",
+      "Yumiko Inoue",
+      "Akiyuki Nosaka",
+      "Hiroshi Koike"
+    ],
+    "language":"ja",
+    "director":"Isao Takahata",
+    "producer":"Toru Hara",
+    "description":"In the latter part of World War II, a boy and his sister, orphaned when their mother is killed in the firebombing of Tokyo, are left to survive on their own in what remains of civilian life in Japan. The plot follows this boy and his sister as they do their best to survive in the Japanese countryside, battling hunger, prejudice, and pride in their own quiet, personal battle.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"From Up on Poppy Hill",
+    "release_date":"2011-07-16",
+    "runtime":91,
+    "genres":[
+      "Animation",
+      "Drama"
+    ],
+    "tmdb_rating":7.525,
+    "vote_count":1929,
+    "budget":22000000,
+    "revenue":61037844,
+    "cast":[
+      "Masami Nagasawa",
+      "Junichi Okada",
+      "Keiko Takeshita",
+      "Yuriko Ishida",
+      "Rumi Hiiragi"
+    ],
+    "crew":[
+      "Hiromi Sasaki",
+      "Rie Matsubara",
+      "Keiko Kadokawa",
+      "Koji Kasamatsu",
+      "Koji Kasamatsu"
+    ],
+    "language":"ja",
+    "director":"Gor\u014d Miyazaki",
+    "producer":"Toshio Suzuki",
+    "description":"The story is set in 1963 in Yokohama. Kokuriko Manor sits on a hill overlooking the harbour. A 16 year-old girl, Umi, lives in that house. Every morning she raises a signal flag facing the sea. The flag means \u201cI pray for safe voyages\u201d. A 17 year-old boy, Shun, always sees this flag from the sea as he rides a tugboat to school. Gradually the pair are drawn to each other but they are faced with a sudden trial. Even so, they keep going without running from facing the hardships of reality.",
+    "people":"[]",
+    "locations":"[]",
+    "species":"['Human']",
+    "vehicles":"[]"
+  },
+  {
+    "title":"My Neighbor Totoro",
+    "release_date":"1988-04-16",
+    "runtime":86,
+    "genres":[
+      "Fantasy",
+      "Animation",
+      "Family"
+    ],
+    "tmdb_rating":8.061,
+    "vote_count":8756,
+    "budget":3700000,
+    "revenue":41000000,
+    "cast":[
+      "Noriko Hidaka",
+      "Chika Sakamoto",
+      "Hitoshi Takagi",
+      "Shigesato Itoi",
+      "Sumi Shimamoto"
+    ],
+    "crew":[
+      "Hayao Miyazaki",
+      "Tooru Hara",
+      "Yasuyoshi Tokuma",
+      "Joe Hisaishi",
+      "Takeshi Seyama"
+    ],
+    "language":"ja",
+    "director":"Hayao Miyazaki",
+    "producer":"Hayao Miyazaki",
+    "description":"Two sisters move to the country with their father in order to be closer to their hospitalized mother, and discover the surrounding trees are inhabited by Totoros, magical spirits of the forest. When the youngest runs away from home, the older sister seeks help from the spirits to find her.",
+    "people":"['Satsuki Kusakabe', 'Mei Kusakabe', 'Tatsuo Kusakabe', 'Yasuko Kusakabe', 'Chibi Totoro', '591524bc-04fe-4e60-8d61-2425e42ffb2a', 'c491755a-407d-4d6e-b58a-240ec78b5061', 'Catbus', 'Granny', 'Kanta \u014cgaki']",
+    "locations":"['Hospital', \"Satsuki's School House\", 'Matsugo']",
+    "species":"['Cat', 'Human', 'Totoro']",
+    "vehicles":"[]"
+  }
+]

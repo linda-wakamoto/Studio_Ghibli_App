@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 37933,
+  "title": "Tales from Earthsea",
+  "release_date": "2006-07-29",
+  "runtime": 115,
+  "genres": [
+    "Animation",
+    "Fantasy",
+    "Adventure"
+  ],
+  "rating": 6.532,
+  "vote_count": 1479,
+  "budget": 22000000,
+  "revenue": 68625104,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "dentsu Music and Entertainment",
+    "GNDHDDT",
+    "Hakuhodo DY Media Partners",
+    "Mitsubishi"
+  ],
+  "cast": [
+    "Junichi Okada",
+    "Aoi Teshima",
+    "Bunta Sugawara",
+    "Yuko Tanaka",
+    "Teruyuki Kagawa"
+  ],
+  "crew": [
+    "Hiromi Sasaki",
+    "Rie Matsubara",
+    "Tsutomu Kawahigashi",
+    "Keiko Kadokawa",
+    "Hajime Takagi"
+  ]
+}

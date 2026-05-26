@@ -1,0 +1,203 @@
+import requests
+import os
+import time
+from typing import Dict, List
+from dotenv import load_dotenv
+import logging
+import json
+
+load_dotenv()
+
+
+class TMDBCollector:
+    def __init__(self):
+        self.api_key = os.getenv('TMDB_API_KEY')
+        self.base_url = 'https://api.themoviedb.org/3'
+        self.session = requests.Session()
+        self.last_request_time = 0
+        self.min_request_interval = 0.25  # 4 requests per second max
+        os.makedirs("../logs", exist_ok=True)
+        os.makedirs("../data/raw/tmdb", exist_ok=True)
+
+        logging.basicConfig(
+            filename='../logs/api_collector.log',
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+
+    def _rate_limit(self):
+        """Ensure we don't exceed rate limits"""
+        elapsed = time.time() - self.last_request_time
+        if elapsed < self.min_request_interval:
+            time.sleep(self.min_request_interval - elapsed)
+        self.last_request_time = time.time()
+
+# API Request: uses error handling + retry loop
+    def _make_request(self, endpoint: str, params: Dict = None, retries: int = 3) -> Dict:
+        if params is None:
+            params = {}
+
+        params['api_key'] = self.api_key
+        url = f"{self.base_url}/{endpoint}"
+
+        for attempt in range(retries):
+            try:
+                self._rate_limit()
+                response = self.session.get(url, params=params, timeout=10)
+                response.raise_for_status()
+
+                logging.info(f"Successfully fetched {endpoint}")
+                return response.json()
+
+            except requests.RequestException as e:
+                logging.error(f"Attempt {attempt + 1} failed for {endpoint}: {e}")
+
+                if attempt < retries - 1:
+                    wait_time = 2 ** attempt
+                    time.sleep(wait_time)
+                else:
+                    raise
+        raise RuntimeError("Unreachable: request retry loop exited unexpectedly")
+
+    # -----------------------------
+    # CLEAN DATA BUILDER
+    # -----------------------------
+    def _build_clean_item(self, mid: int, details: Dict, credits: Dict) -> Dict:
+        return {
+            "tmdb_id": mid,
+            "title": details.get("title"),
+            "release_date": details.get("release_date"),
+            "runtime": details.get("runtime"),
+            "genres": [g["name"] for g in details.get("genres", [])],
+            "rating": details.get("vote_average"),
+            "vote_count": details.get("vote_count"),
+            "budget": details.get("budget"),
+            "revenue": details.get("revenue"),
+            "language": details.get("original_language"),
+            "production_companies": [c["name"] for c in details.get("production_companies", [])][:5],
+            "cast": [c["name"] for c in credits.get("cast", [])][:5],
+            "crew": [c["name"] for c in credits.get("crew", [])][:5],
+        }
+
+        # -----------------------------
+        # SAFE STRING MATCHING
+        # -----------------------------
+
+    def _normalize(self, text: str) -> str:
+        if not text:
+            return ""
+        return (
+            text.lower()
+            .strip()
+            .replace("the ", "")
+            .replace("a ", "")
+            .replace("an ", "")
+            .replace("'", "")
+            .replace("-", "")
+            .replace(":", "")
+        )
+
+        # -----------------------------
+        # MAIN COLLECTOR (SAFE VERSION)
+        # -----------------------------
+
+    def collect_ghibli_movies(self) -> List[Dict]:
+
+        ghibli_titles = [
+            "Castle in the Sky",
+            "Grave of the Fireflies",
+            "My Neighbor Totoro",
+            "Kiki's Delivery Service",
+            "Only Yesterday",
+            "Porco Rosso",
+            "Pom Poko",
+            "Whisper of the Heart",
+            "Princess Mononoke",
+            "My Neighbors the Yamadas",
+            "Spirited Away",
+            "The Cat Returns",
+            "Howl's Moving Castle",
+            "Tales from Earthsea",
+            "Ponyo",
+            "Arrietty",
+            "From Up on Poppy Hill",
+            "The Wind Rises",
+            "The Tale of the Princess Kaguya",
+            "When Marnie Was There",
+            "Earwig and the Witch",
+            "The Red Turtle"
+        ]
+
+        results = []
+
+        for title in ghibli_titles:
+            try:
+                # -----------------------------
+                # SEARCH TMDB
+                # -----------------------------
+                search = self._make_request(
+                    "search/movie",
+                    {
+                        "query": title,
+                        "include_adult": False,
+                        "language": "en-US",
+                    },
+                )
+
+                matches = search.get("results", [])
+
+                if not matches:
+                    logging.warning(f"No results for {title}")
+                    continue
+
+                # -----------------------------
+                # STRICT MATCHING (FIX)
+                # -----------------------------
+                target = self._normalize(title)
+                movie_id = None
+
+                for m in matches:
+                    if self._normalize(m.get("title")) == target:
+                        movie_id = m["id"]
+                        break
+
+                # fallback if no exact match
+                if movie_id is None:
+                    logging.warning(f"No exact match for {title}, using top result")
+                    movie_id = matches[0]["id"]
+
+                # -----------------------------
+                # FETCH DETAILS
+                # -----------------------------
+                details = self._make_request(f"movie/{movie_id}")
+                credits = self._make_request(f"movie/{movie_id}/credits")
+
+                # safety check: skip invalid matches
+                if not details.get("release_date"):
+                    logging.warning(f"Skipping invalid match for {title}")
+                    continue
+
+                clean_item = self._build_clean_item(movie_id, details, credits)
+                clean_item["title"] = title  # enforce canonical name
+
+                results.append(clean_item)
+
+                # -----------------------------
+                # SAVE RAW FILE
+                # -----------------------------
+                with open(f"data/raw/tmdb/{movie_id}.json", "w", encoding="utf-8") as f:
+                    json.dump(clean_item, f, indent=2)
+
+                print(f"Collected: {title}")
+
+            except Exception as e:
+                logging.error(f"Failed {title}: {e}")
+
+        return results
+
+# Run
+if __name__ == "__main__":
+    collector = TMDBCollector()
+    data = collector.collect_ghibli_movies()
+
+    print(f"Collected {len(data)} Ghibli movies")

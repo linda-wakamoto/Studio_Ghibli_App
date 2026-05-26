@@ -1,0 +1,36 @@
+{
+  "tmdb_id": 16859,
+  "title": "Kiki's Delivery Service",
+  "release_date": "1989-07-29",
+  "runtime": 103,
+  "genres": [
+    "Animation",
+    "Family",
+    "Fantasy"
+  ],
+  "rating": 7.833,
+  "vote_count": 4535,
+  "budget": 6900000,
+  "revenue": 4493017,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Nibariki",
+    "Tokuma Shoten",
+    "Nippon Television Network Corporation"
+  ],
+  "cast": [
+    "Minami Takayama",
+    "Rei Sakuma",
+    "Kappei Yamaguchi",
+    "Keiko Toda",
+    "Mieko Nobusawa"
+  ],
+  "crew": [
+    "Eiko Kadono",
+    "Hayao Miyazaki",
+    "Mikihiko Tsuzuki",
+    "Hayao Miyazaki",
+    "Yasuyoshi Tokuma"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "tmdb_id": 242828,
+  "title": "When Marnie Was There",
+  "release_date": "2014-07-19",
+  "runtime": 103,
+  "genres": [
+    "Animation",
+    "Drama",
+    "Family"
+  ],
+  "rating": 7.936,
+  "vote_count": 1951,
+  "budget": 0,
+  "revenue": 34949567,
+  "language": "ja",
+  "production_companies": [
+    "Studio Ghibli",
+    "Hakuhodo DY Media Partners",
+    "KDDI",
+    "Nippon Television Network Corporation",
+    "TOHO"
+  ],
+  "cast": [
+    "Sara Takatsuki",
+    "Kasumi Arimura",
+    "Nanako Matsushima",
+    "Susumu Terajima",
+    "Toshie Negishi"
+  ],
+  "crew": [
+    "Tamaki Kojo",
+    "Masashi Ando",
+    "Hiromasa Yonebayashi",
+    "Joan G. Robinson",
+    "Keiko Niwa"
+  ]
+}
