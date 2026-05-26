@@ -5,6 +5,7 @@ import pandas as pd
 import os
 import ast
 import html
+import base64
 
 from model import predict_films
 
@@ -13,8 +14,14 @@ df = pd.read_csv(CSV_PATH)
 
 st.set_page_config(page_title="Ghibli Film Recommender", layout="wide")
 
-st.title("Ghibli Film Explorer")
-
+st.markdown(
+    """
+    <h1 style="color: #177A1F; font-size: 40px; font-weight: bold; margin-bottom: 24px;">
+        🌿 Ghibli Film Explorer 🌿
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
 # =========================
 # MODE SELECT
 # =========================
@@ -39,19 +46,36 @@ if mode == "Image Select":
     # -------------------------
     selected_row = df.iloc[st.session_state.selected_idx]
 
+    labels_data = selected_row['labels']
+
+    try:
+        labels_data = ast.literal_eval(selected_row['labels']) if isinstance(selected_row['labels'], str) else \
+        selected_row['labels']
+
+        cleaned_labels = [str(label).strip().replace("_", " ") for label in labels_data if label.strip()]
+    except Exception:
+        cleaned_labels = []
+
+    labels_string = ", ".join(cleaned_labels)
+
     st.markdown(
         f"""
-        <div style="font-size:25px; font-weight:bold;">
+        <div style="font-size:30px; font-weight:bold; margin-top:20px;">
             {selected_row["title"]}
         </div>
         
-        <div style="font-size:16px; font-weight:normal;  margin-top:8px;">    
+        <div style="font-size:18px; font-weight:normal;  margin-top:8px;">    
             {selected_row["description"]} 
         </div>
             
-        <div style="font-size:18px; font-weight:normal;  margin-top:8px; color:#D4A520;">
-            ⭐ Rating: {selected_row['tmdb_rating']}
+        <div style="font-size:20px; font-weight:normal;  margin-top:32px;">
+            ⭐ <span style ="">{selected_row['tmdb_rating']}</span>
         </div>
+        
+        <div style="font-size:18px; font-weight:bold; margin-top:8px;">
+            🏷️ <span style="font-weight:normal;">{labels_string}</span>
+        </div>           
+        </div>       
         """,
         unsafe_allow_html=True
     )
@@ -63,10 +87,12 @@ if mode == "Image Select":
     # -------------------------
     st.subheader("Select a film")
 
+    # Shift columns back to 3
     cols = st.columns(3)
 
     for i, row in df.iterrows():
 
+        # Change the modulo to 3 so it alternates perfectly across three columns
         col = cols[i % 3]
 
         with col:
@@ -77,18 +103,33 @@ if mode == "Image Select":
                 "image.jpg"
             )
 
-            # show image if exists
-            if row["title"] != "Grave of the Fireflies" and os.path.exists(img_path):
-                st.image(img_path, width=300)
+            # --- show image if exists ---
+            if os.path.exists(img_path):
+                import base64
 
-            # SINGLE CLICK SELECT (FIXED)
-            if st.button(row["title"], key=f"btn_{i}"):
+                # Convert local image to HTML-friendly data URI
+                with open(img_path, "rb") as f:
+                    data = f.read()
+                    encoded = base64.b64encode(data).decode()
 
-                st.session_state.selected_idx = i
-                st.rerun()
+                # NO CROPPING: Fully preserved shapes arranged beautifully in a 3-column grid
+                st.markdown(
+                    f"""
+                        <div style="text-align: center; width: 100%;">
+                            <img src="data:image/jpeg;base64,{encoded}" 
+                                 style="max-width: 100%; height: 220px; object-fit: contain; border-radius: 12px;">
+                        </div>
+                        """,
+                    unsafe_allow_html=True
+                )
+
+                # --- SHOW THE BUTTON (DIRECTLY BELOW THE IMAGE) ---
+                if st.button(row["title"], key=f"grid_btn_{i}", use_container_width=True):
+                    st.session_state.selected_idx = i
+                    st.rerun()
 
 # =====================================================
-# LABEL MODE (RANDOM FOREST)
+# LABEL MODE (MODELING)
 # =====================================================
 if mode == "Label Select":
 
@@ -112,7 +153,7 @@ if mode == "Label Select":
             except:
                 pass
 
-        return sorted(set(v.strip().lower() for v in values))
+        return sorted(set(str(v).strip().replace("_", " ") for v in values))
 
     all_genres = parse_list_column("genres")
     all_labels = parse_list_column("labels")
@@ -176,16 +217,13 @@ if mode == "Label Select":
             title = html.escape(result["title"])
             desc = html.escape(result["description"])
             rating = result["tmdb_rating"]
-            score = round(pred_row["score"] * 100, 1)
 
             st.markdown(
                 (
                     '<div style="padding:20px;border-radius:10px;">'
                     f'<div style="font-size:26px;font-weight:bold;">{result["title"]}</div>'
                     f'<div style="font-size:16px;margin-top:10px;">{result["description"]}</div>'
-                    f'<div style="font-size:20px;color:#D4A520;margin-top:10px;">⭐ Rating: {result["tmdb_rating"]}</div>'
-                    f'<div style="font-size:16px;color:#58BF70;margin-top:10px;">'
-                    f'Match Confidence: {round(pred_row["score"] * 100, 1)}%'
+                    f'<div style="font-size:20px;margin-top:10px;">⭐ {result["tmdb_rating"]}</div>'
                     '</div></div>'
                 ),
                 unsafe_allow_html=True
