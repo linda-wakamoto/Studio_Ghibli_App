@@ -1,4 +1,4 @@
-# Ghibli Data Science and Recommendation Pipeline 
+# Studio Ghibli Data Science Project
 
 ---
 
