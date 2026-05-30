@@ -48,11 +48,9 @@ source venv/bin/activate
 ```bash
 pip install requirements.txt
 ```
-
-#### API Keys
 ---
 
-## This project uses the TMDB API
+## API Keys
 
 ### Set your API key:
 
@@ -106,16 +104,11 @@ Outputs:
 python model.py
 ```
 This script acts as the machine learning engine:
-
-Compiles and formats feature vectors into a consolidated token mapping array.
-
-Validates the system architecture by executing an automated user-profile simulator.
-
-Quantifies accuracy via Information Retrieval metrics (Hit Rate @ 5 and Mean Reciprocal Rank).
-
-Runs a Monte Carlo simulation over 1,000 random user queries to test system matrix sparsity.
-
-Saves the resulting dual-panel diagnostic visualization to jaccard_score_distribution.png and saves the serialized matrices into models/.
+- Compiles and formats feature vectors into a consolidated token mapping array.
+- Validates the system architecture by executing an automated user-profile simulator.
+- Quantifies accuracy via Information Retrieval metrics (Hit Rate @ 5 and Mean Reciprocal Rank).
+- Runs a Monte Carlo simulation over 1,000 random user queries to test system matrix sparsity.
+- Saves the resulting dual-panel diagnostic visualization to jaccard_score_distribution.png and saves the serialized matrices into models/.
 
 ---
 

@@ -131,6 +131,17 @@ MANUAL_LABELS = {
     "the red turtle": [
         "ocean",
         "forests"
+    ],
+
+    "from up on poppy hill": [
+        "ocean",
+        "romantic",
+        "coming_of_age"
+    ],
+
+    "tales from earthsea": [
+        "battles",
+        "friendship"
     ]
 }
 

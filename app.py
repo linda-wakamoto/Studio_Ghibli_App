@@ -14,24 +14,58 @@ df = pd.read_csv(CSV_PATH)
 
 st.set_page_config(page_title="Ghibli Film Recommender", layout="wide")
 
+# --- App Header ---
 st.markdown(
-    """
-    <h1 style="color: #177A1F; font-size: 40px; font-weight: bold; margin-bottom: 24px;">
-        🌿 Ghibli Film Explorer 🌿
-    </h1>
-    """,
+    "<h1 style='text-align: center; color: #4A7c59; font-family: sans-serif;'>🌿 Ghibli Film Explorer 🌿</h1>",
     unsafe_allow_html=True
 )
+st.markdown(
+    "<p style='text-align: center; font-style: italic; color: #6B7A82; font-size: 1.2rem;'>Discover the magic of Studio Ghibli</p>",
+    unsafe_allow_html=True
+)
+st.markdown("---")
+
+# --- Button Styling ---
+st.markdown("""
+    <style>
+    /* Target all buttons in the app */
+    div.stButton > button {
+        background-color: #FAF9F6;     /* Warm Cream */
+        color: #4A7c59;                /* Forest Green text */
+        border: 2px solid #4A7c59;     /* Forest Green border */
+        border-radius: 20px;           /* Rounded pill shape */
+        padding: 6px 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;     /* Smooth transition animation */
+    }
+
+    /* Bouncy hover effect */
+    div.stButton > button:hover {
+        background-color: #4A7c59;     /* Flips to Green background */
+        color: #FAF9F6;                /* Flips to Cream text */
+        transform: translateY(-2px);   /* Tiny lift up */
+        box-shadow: 0px 4px 10px rgba(74, 124, 89, 0.2); /* Soft green glow */
+    }
+
+    /* Active/click effect */
+    div.stButton > button:active {
+        transform: translateY(0px);    /* Pushes back down when clicked */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # =========================
 # MODE SELECT
 # =========================
-mode = st.sidebar.radio(
-    "Choose mode",
-    ["Image Select", "Label Select"]
-)
+with st.sidebar:
+    st.title("Settings")
+    mode = st.radio("Choose mode", ["Image Select", "Label Select"])
+
+    st.markdown("---")
+    st.caption("Data source: Studio Ghibli API & Local Metadata")
 
 # =========================================================
-# IMAGE MODE (GRID BELOW DETAILS - FIXED SINGLE CLICK)
+# IMAGE MODE
 # =========================================================
 if mode == "Image Select":
 
@@ -41,8 +75,67 @@ if mode == "Image Select":
     if "selected_idx" not in st.session_state:
         st.session_state.selected_idx = 0
 
+    if "carousel_page" not in st.session_state:
+        st.session_state.carousel_page = 0
+
     # -------------------------
-    # SHOW DETAILS (TOP)
+    # IMAGE GALLERY (SLIDESHOW)
+    # -------------------------
+    ITEMS_PER_PAGE = 3
+    total_films = len(df)
+    max_page = (total_films - 1) // ITEMS_PER_PAGE
+
+    # Control Buttons (Prev / Next Row)
+    btn_col1, space_col, btn_col2 = st.columns([1, 6, 1])
+
+    with btn_col1:
+        if st.button("← Back", use_container_width=True):
+            if st.session_state.carousel_page > 0:
+                st.session_state.carousel_page -= 1
+                st.rerun()
+
+    with btn_col2:
+        if st.button("Next →", use_container_width=True):
+            if st.session_state.carousel_page < max_page:
+                st.session_state.carousel_page += 1
+                st.rerun()
+
+    start_idx = st.session_state.carousel_page * ITEMS_PER_PAGE
+    end_idx = min(start_idx + ITEMS_PER_PAGE, total_films)
+    page_df = df.iloc[start_idx:end_idx]
+
+    # Render the current slide items horizontally
+    # Dynamic columns matching the current page's item count prevents spacing stretching
+    cols = st.columns(len(page_df))
+
+    for idx, (_, row) in enumerate(page_df.iterrows()):
+        col = cols[idx]
+        global_idx = start_idx + idx  # Track true index in original dataframe
+
+        with col:
+            img_path = os.path.join("data/movie_images", row["title"].replace(" ", "_"), "image.jpg")
+
+            if os.path.exists(img_path):
+                with open(img_path, "rb") as f:
+                    encoded = base64.b64encode(f.read()).decode()
+
+                # Render fixed smaller height cards to ensure they sit on one screen page
+                st.markdown(
+                    f"""
+                    <div style="text-align: center; width: 100%;">
+                        <img src="data:image/jpeg;base64,{encoded}" 
+                             style="max-width: 100%; height: 240px; object-fit: contain; border-radius: 8px;">
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+            if st.button(row["title"], key=f"grid_btn_{global_idx}", use_container_width=True):
+                st.session_state.selected_idx = global_idx
+                st.rerun()
+
+    # -------------------------
+    # SHOW DETAILS
     # -------------------------
     selected_row = df.iloc[st.session_state.selected_idx]
 
@@ -60,19 +153,19 @@ if mode == "Image Select":
 
     st.markdown(
         f"""
-        <div style="font-size:30px; font-weight:bold; margin-top:20px;">
-            {selected_row["title"]}
+        <div style="font-size:25px; font-weight:bold; color:#4A7c59; margin-top:20px;">
+            🌸 {selected_row["title"]}
         </div>
         
-        <div style="font-size:18px; font-weight:normal;  margin-top:8px;">    
+        <div style="font-size:16px; font-weight:normal; margin-top:8px;">    
             {selected_row["description"]} 
         </div>
             
-        <div style="font-size:20px; font-weight:normal;  margin-top:32px;">
+        <div style="font-size:16px; font-weight:normal;  margin-top:32px;">
             ⭐ <span style ="">{selected_row['tmdb_rating']}</span>
         </div>
         
-        <div style="font-size:18px; font-weight:bold; margin-top:8px;">
+        <div style="font-size:16px; font-weight:bold; margin-top:8px;">
             🏷️ <span style="font-weight:normal;">{labels_string}</span>
         </div>           
         </div>       
@@ -81,52 +174,6 @@ if mode == "Image Select":
     )
 
     st.divider()
-
-    # -------------------------
-    # IMAGE GRID (BOTTOM)
-    # -------------------------
-    st.subheader("Select a film")
-
-    # Shift columns back to 3
-    cols = st.columns(3)
-
-    for i, row in df.iterrows():
-
-        # Change the modulo to 3 so it alternates perfectly across three columns
-        col = cols[i % 3]
-
-        with col:
-
-            img_path = os.path.join(
-                "data/movie_images",
-                row["title"].replace(" ", "_"),
-                "image.jpg"
-            )
-
-            # --- show image if exists ---
-            if os.path.exists(img_path):
-                import base64
-
-                # Convert local image to HTML-friendly data URI
-                with open(img_path, "rb") as f:
-                    data = f.read()
-                    encoded = base64.b64encode(data).decode()
-
-                # NO CROPPING: Fully preserved shapes arranged beautifully in a 3-column grid
-                st.markdown(
-                    f"""
-                        <div style="text-align: center; width: 100%;">
-                            <img src="data:image/jpeg;base64,{encoded}" 
-                                 style="max-width: 100%; height: 220px; object-fit: contain; border-radius: 12px;">
-                        </div>
-                        """,
-                    unsafe_allow_html=True
-                )
-
-                # --- SHOW THE BUTTON (DIRECTLY BELOW THE IMAGE) ---
-                if st.button(row["title"], key=f"grid_btn_{i}", use_container_width=True):
-                    st.session_state.selected_idx = i
-                    st.rerun()
 
 # =====================================================
 # LABEL MODE (MODELING)
@@ -196,7 +243,7 @@ if mode == "Label Select":
             top_k=5
         )
 
-        st.markdown("## Recommended Films")
+        st.subheader("Recommended Films")
 
         for _, pred_row in results.iterrows():
 
@@ -221,7 +268,7 @@ if mode == "Label Select":
             st.markdown(
                 (
                     '<div style="padding:20px;border-radius:10px;">'
-                    f'<div style="font-size:26px;font-weight:bold;">{result["title"]}</div>'
+                    f'<div style="font-size:26px;font-weight:bold;color:#4A7c59;">🌸 {result["title"]}</div>'
                     f'<div style="font-size:16px;margin-top:10px;">{result["description"]}</div>'
                     f'<div style="font-size:20px;margin-top:10px;">⭐ {result["tmdb_rating"]}</div>'
                     '</div></div>'
