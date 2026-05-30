@@ -1,20 +1,20 @@
-import json
-import re
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
 from collections import Counter
+from wordcloud import WordCloud
+import nltk
+from nltk.corpus import stopwords
+import re
+import matplotlib.pyplot as plt
 import os
 
-import os
-
-output_dir = ""
+output_dir = "."
 os.makedirs(output_dir, exist_ok=True)
 
 # =====================================================
 # LOAD PROCESSED DATA
 # =====================================================
-DATA_PATH = "../data/processed/ghibli_tmdb_merged.csv"
+DATA_PATH = "../data/processed/final_dataset.csv"
 
 df = pd.read_csv(DATA_PATH)
 
@@ -27,12 +27,6 @@ print(f"Loaded dataset: {len(df)} rows")
 df["tmdb_rating"] = pd.to_numeric(df["tmdb_rating"], errors="coerce")
 
 # WORD CLOUD
-from wordcloud import WordCloud
-import nltk
-from nltk.corpus import stopwords
-import re
-import matplotlib.pyplot as plt
-
 nltk.download("stopwords")
 stop_words = set(stopwords.words("english"))
 
@@ -189,10 +183,88 @@ if not genre_df.empty:
     for i, v in enumerate(genre_avg):
         ax.text(i, v + 0.05, f"{v:.2f}", ha='center', fontsize=13)
 
-    plt.subplots_adjust(bottom=0.3)  # <-- key fix
+    plt.subplots_adjust(bottom=0.3)
     plt.tight_layout()
 
     plt.savefig(os.path.join(output_dir, "genre_ratings.png"))
+    plt.close()
+
+# =====================================================
+# LABEL ANALYSIS
+# =====================================================
+def parse_labels(x):
+    if pd.isna(x):
+        return []
+    if isinstance(x, str):
+        return x.replace("[", "").replace("]", "").replace("'", "").split(", ")
+    return []
+
+
+all_labels = []
+
+for l in df["labels"].dropna():
+    all_labels.extend(parse_labels(l))
+
+label_counts = Counter(all_labels)
+top_labels = label_counts.most_common(10)
+
+if top_labels:
+    labels, counts = zip(*top_labels)
+
+    plt.figure(figsize=(8, 5))
+    ax = sns.barplot(x=list(counts), y=list(labels))
+    plt.title("Top Labels")
+
+    # Annotate bars
+    for i, v in enumerate(counts):
+        ax.text(v + 0.2, i, str(v), va='center')
+
+    plt.subplots_adjust(left=0.3)
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "top_labels.png"))
+    plt.close()
+
+
+# =====================================================
+# AVERAGE RATING BY Label
+# =====================================================
+label_rows = []
+
+for _, row in df.iterrows():
+    labels = parse_labels(row.get("labels"))
+
+    for l in labels:
+        label_rows.append({
+            "labels": l.strip(),
+            "rating": row["tmdb_rating"]
+        })
+
+label_df = pd.DataFrame(label_rows)
+
+if not label_df.empty:
+    label_avg = (
+        label_df.groupby("labels")["rating"]
+        .mean()
+        .sort_values(ascending=False)
+        .head(10)
+    )
+
+    plt.figure(figsize=(12, 7))
+    ax = label_avg.plot(kind="bar", width=0.5)
+    ax.set_ylim(0,10)
+    ax.set_xlabel("Label", fontsize=12)
+
+    plt.title("Average TMDB Rating by Label for Ghibli movies", fontsize=12)
+    plt.xticks(rotation=45, ha='right', fontsize=13)  # make genre slanted so they're readable
+
+    # Add labels
+    for i, v in enumerate(label_avg):
+        ax.text(i, v + 0.05, f"{v:.2f}", ha='center', fontsize=13)
+
+    plt.subplots_adjust(bottom=0.3)
+    plt.tight_layout()
+
+    plt.savefig(os.path.join(output_dir, "label_ratings.png"))
     plt.close()
 
 # =====================================================
@@ -301,128 +373,88 @@ plt.savefig(os.path.join(output_dir, "budget_by_movie.png"))
 plt.close()
 
 # =====================================================
-# FILMS WITH CATS
+# SPECIES DISTRIBUTION
 # =====================================================
 
+all_species = []
 
-# ---------------------------
-# Helper: parse species column
-# ---------------------------
-def parse_species(x):
-    if pd.isna(x):
-        return []
-    if isinstance(x, str):
-        return x.replace("[", "").replace("]", "").replace("'", "").split(", ")
-    return []
+for s in df["species"].dropna():
+    parsed_items = parse_species(s)
+    all_species.extend([item.strip() for item in parsed_items if item.strip()])
 
-# ---------------------------
-# Create "has_cat" column
-# ---------------------------
-df["has_cat"] = df["species"].apply(lambda x: "Cat" in parse_species(x))
+species_counts = Counter(all_species)
+# Sorts the distribution inherently in descending order
+top_species = species_counts.most_common()
 
-# ---------------------------
-# Count values
-# ---------------------------
-counts = df["has_cat"].value_counts()
+if top_species:
+    species_names, counts = zip(*top_species)
 
-labels = ["No Cat", "Cat"]
-values = [counts.get(False, 0), counts.get(True, 0)]
+    plt.figure(figsize=(10, 6))
+    ax = sns.barplot(
+        x=list(counts),
+        y=list(species_names),
+        hue=list(species_names),
+        palette="viridis",
+        legend=False
+    )
+    plt.title("Distribution of Species in Ghibli Films", fontsize=14)
+    plt.xlabel("Count", fontsize=12)
+    plt.ylabel("Species", fontsize=12)
 
-# ---------------------------
-# Plot
-# ---------------------------
-plt.figure(figsize=(6, 4))
-ax = sns.barplot(x=labels, y=values)
+    # Annotate bars
+    for i, v in enumerate(counts):
+        ax.text(v + 0.1, i, str(v), va='center', fontsize=10)
 
-ax.set_xlabel("Category", fontsize=12)
-ax.set_ylabel("Number of Films", fontsize=12)
-plt.title("Ghibli Films Featuring Cats")
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "species_distribution.png"), dpi=300)
+    plt.close()
 
-# Add value labels
-for i, v in enumerate(values):
-    ax.text(i, v, str(v), ha='center', va='bottom')
+# =====================================================
+# CORRELATION BETWEEN GENRES, LABELS, AND SPECIES
+# =====================================================
+# Filter out empty or blank strings ('') from the top 10 species list
+top_g = [g for g, c in Counter(all_genres).most_common(10) if g.strip()]
+top_l = [l for l, c in Counter(all_labels).most_common(10) if l.strip()]
+top_s = [s for s, c in Counter(all_species).most_common(10) if s.strip()]  # FIX: Removes blanks
 
-plt.tight_layout()
-plt.savefig(os.path.join(output_dir, "cat_films.png"))
-plt.close()
+binary_rows = []
+for _, row in df.iterrows():
+    m_genres = parse_genres(row.get("genres"))
+    m_labels = parse_labels(row.get("labels"))
+    m_species = parse_species(row.get("species"))
 
-# # =====================================================
-# # ANALYSIS REPORT
-# # =====================================================
-#
-# top_genres_list = list(genre_counts.keys())[:5]
-# top_genres_clean = ", ".join(top_genres_list)
-#
-# report = f"""
-# # DATA ANALYSIS REPORT
-#
-# ---
-#
-# ## 1. Data Sources
-#
-# This project uses two primary data sources:
-#
-# - **TMDB (The Movie Database) API**
-#   - Provides structured metadata including:
-#     - Ratings
-#     - Budget and revenue
-#     - Genres
-#     - Cast and crew
-#     - Production companies
-#     - Release dates
-#
-# - **Studio Ghibli API **
-#
-# ---
-#
-# ## 2. Dataset Overview
-#
-# - Total movies analyzed: {len(df)}
-# - Matched TMDB + Studio Ghibli records after merging
-#
-# ---
-#
-# ## 3. Visualizations
-#
-# ### Rating Distributions
-# ![Rating Distribution](rating_distributions.png)
-# This side by side bar graph shows how each site mostly rated the same batch of movies/tv shows.
-#
-# ### Most Common Genres
-# ![Top Genres](top_genres.png)
-# This bar graph shows which genres were the most prevalent in our dataset, with the genres at the top being most prevalent.
-#
-# ### Average Rating by Genre
-# ![Genre Ratings](genre_ratings.png)
-# This bar graph shows the average rating of movies/tv shows in our dataset divided by the genre.
-# ---
-#
-# ## 4. Genre Insights
-#
-# Most common genres in the dataset:
-#
-# {top_genres_clean}
-#
-#
-# ---
-#
-# ## 5. Limitations
-#
-# - Some Ghibli films like Nausicaa are missing in Ghibli dataset, so they are missing in merged dataset
-# - Only two data sources were used (TMDB and Studio Ghibli).
-#
-# ---
-#
-# ## 6. Future Improvements
-#
-# - Integrate additional data sources (e.g. Rotten Tomatoes, Metacritic) which allows for web scraping without written consent
-# - Expand dataset beyond current sample size
-# - Add sentiment analysis_tmdb_ghibli of reviews for deeper insight
-#
-# ---
-# """
-#
-# with open("REPORT.md", "w", encoding="utf-8") as f:
-#     f.write(report)
-#
-# print("Analysis complete → REPORT.md saved")
+    feature_dict = {}
+    # Build binary indicator mapping (1 if present, 0 if absent)
+    for g in top_g:
+        feature_dict[f"Genre: {g}"] = 1 if g in m_genres else 0
+    for l in top_l:
+        feature_dict[f"Label: {l}"] = 1 if l in m_labels else 0
+    for s in top_s:
+        feature_dict[f"Species: {s}"] = 1 if s in m_species else 0
+
+    binary_rows.append(feature_dict)
+
+corr_df = pd.DataFrame(binary_rows)
+
+if not corr_df.empty:
+    # Calculate Pearson correlation matrix across dummy-encoded features
+    corr_matrix = corr_df.corr()
+
+    plt.figure(figsize=(16, 14))
+    sns.heatmap(
+        corr_matrix,
+        annot=True,
+        fmt=".2f",
+        cmap="coolwarm",
+        vmin=-1,
+        vmax=1,
+        linewidths=0.5,
+        cbar_kws={"shrink": 0.8}
+    )
+    plt.title("Correlation Heatmap between Top Genres, Labels, and Species", fontsize=16, pad=20)
+    plt.xticks(rotation=45, ha="right", fontsize=10)
+    plt.yticks(fontsize=10)
+
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "genre_label_species_correlation.png"), dpi=300)
+    plt.close()

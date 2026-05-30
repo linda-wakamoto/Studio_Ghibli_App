@@ -1,8 +1,11 @@
 import os
 import pandas as pd
+from pathlib import Path
 
-CSV_PATH = "../data/processed/ghibli_interest_labels.csv"
-IMAGE_DIR = "../data/movie_images"
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+CSV_PATH = BASE_DIR / "data" / "processed" / "final_dataset.csv"
+IMAGE_DIR = BASE_DIR / "data" / "movie_images"
 
 df = pd.read_csv(CSV_PATH)
 

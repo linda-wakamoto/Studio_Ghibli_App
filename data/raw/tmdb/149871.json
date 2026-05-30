@@ -8,8 +8,8 @@
     "Drama",
     "Fantasy"
   ],
-  "rating": 8.093,
-  "vote_count": 1969,
+  "rating": 8.096,
+  "vote_count": 1985,
   "budget": 49300000,
   "revenue": 24366656,
   "language": "ja",
@@ -29,9 +29,9 @@
   ],
   "crew": [
     "Yukari Hashimoto",
-    "Seiji Okuda",
-    "Ryoichi Fukuyama",
     "Yukiko Kakita",
-    "Naoya Fujimaki"
+    "Naoya Fujimaki",
+    "Seiji Okuda",
+    "Ryoichi Fukuyama"
   ]
 }

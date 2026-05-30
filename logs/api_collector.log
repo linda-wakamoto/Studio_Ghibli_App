@@ -1,201 +1,143 @@
-2026-05-01 18:18:46,388 - INFO - Successfully fetched movie/popular
-2026-05-01 18:18:46,588 - INFO - Successfully fetched movie/1318447
-2026-05-01 18:18:46,795 - INFO - Successfully fetched movie/1318447/credits
-2026-05-01 18:18:47,026 - INFO - Successfully fetched movie/1226863
-2026-05-01 18:18:47,312 - INFO - Successfully fetched movie/1226863/credits
-2026-05-01 18:18:47,542 - INFO - Successfully fetched movie/936075
-2026-05-01 18:18:47,817 - INFO - Successfully fetched movie/936075/credits
-2026-05-01 18:18:48,022 - INFO - Successfully fetched movie/1523145
-2026-05-01 18:18:48,328 - INFO - Successfully fetched movie/1523145/credits
-2026-05-01 18:18:48,530 - INFO - Successfully fetched movie/1198994
-2026-05-01 18:18:48,758 - INFO - Successfully fetched movie/1198994/credits
-2026-05-01 18:18:48,996 - INFO - Successfully fetched movie/1292695
-2026-05-01 18:18:49,262 - INFO - Successfully fetched movie/1292695/credits
-2026-05-01 18:20:14,856 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:15,062 - INFO - Successfully fetched movie/10515
-2026-05-01 18:20:15,268 - INFO - Successfully fetched movie/10515/credits
-2026-05-01 18:20:15,490 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:15,722 - INFO - Successfully fetched movie/76826
-2026-05-01 18:20:16,092 - INFO - Successfully fetched movie/76826/credits
-2026-05-01 18:20:16,296 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:16,597 - INFO - Successfully fetched movie/8392
-2026-05-01 18:20:16,802 - INFO - Successfully fetched movie/8392/credits
-2026-05-01 18:20:17,006 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:17,303 - INFO - Successfully fetched movie/16859
-2026-05-01 18:20:17,493 - INFO - Successfully fetched movie/16859/credits
-2026-05-01 18:20:17,738 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:17,981 - INFO - Successfully fetched movie/15080
-2026-05-01 18:20:18,254 - INFO - Successfully fetched movie/15080/credits
-2026-05-01 18:20:18,529 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:18,725 - INFO - Successfully fetched movie/11621
-2026-05-01 18:20:18,976 - INFO - Successfully fetched movie/11621/credits
-2026-05-01 18:20:19,224 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:19,530 - INFO - Successfully fetched movie/15283
-2026-05-01 18:20:19,725 - INFO - Successfully fetched movie/15283/credits
-2026-05-01 18:20:19,977 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:20,234 - INFO - Successfully fetched movie/37797
-2026-05-01 18:20:20,497 - INFO - Successfully fetched movie/37797/credits
-2026-05-01 18:20:20,746 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:21,029 - INFO - Successfully fetched movie/128
-2026-05-01 18:20:21,222 - INFO - Successfully fetched movie/128/credits
-2026-05-01 18:20:21,479 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:21,811 - INFO - Successfully fetched movie/16198
-2026-05-01 18:20:21,977 - INFO - Successfully fetched movie/16198/credits
-2026-05-01 18:20:22,242 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:22,482 - INFO - Successfully fetched movie/129
-2026-05-01 18:20:22,795 - INFO - Successfully fetched movie/129/credits
-2026-05-01 18:20:22,989 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:23,275 - INFO - Successfully fetched movie/15370
-2026-05-01 18:20:23,488 - INFO - Successfully fetched movie/15370/credits
-2026-05-01 18:20:23,746 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:23,986 - INFO - Successfully fetched movie/4935
-2026-05-01 18:20:24,285 - INFO - Successfully fetched movie/4935/credits
-2026-05-01 18:20:24,571 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:24,742 - INFO - Successfully fetched movie/37933
-2026-05-01 18:20:24,976 - INFO - Successfully fetched movie/37933/credits
-2026-05-01 18:20:25,256 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:25,493 - INFO - Successfully fetched movie/12429
-2026-05-01 18:20:25,816 - INFO - Successfully fetched movie/12429/credits
-2026-05-01 18:20:26,078 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:26,301 - INFO - Successfully fetched movie/51739
-2026-05-01 18:20:26,534 - INFO - Successfully fetched movie/51739/credits
-2026-05-01 18:20:26,750 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:27,011 - INFO - Successfully fetched movie/83389
-2026-05-01 18:20:27,260 - INFO - Successfully fetched movie/83389/credits
-2026-05-01 18:20:27,492 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:27,749 - INFO - Successfully fetched movie/149870
-2026-05-01 18:20:27,995 - INFO - Successfully fetched movie/149870/credits
-2026-05-01 18:20:28,236 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:28,494 - INFO - Successfully fetched movie/149871
-2026-05-01 18:20:28,742 - INFO - Successfully fetched movie/149871/credits
-2026-05-01 18:20:29,060 - INFO - Successfully fetched search/movie
-2026-05-01 18:20:29,253 - INFO - Successfully fetched movie/242828
-2026-05-01 18:20:29,500 - INFO - Successfully fetched movie/242828/credits
-2026-05-01 18:46:35,857 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:35,996 - INFO - Successfully fetched movie/10515
-2026-05-01 18:46:36,306 - INFO - Successfully fetched movie/10515/credits
-2026-05-01 18:46:36,508 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:36,714 - INFO - Successfully fetched movie/76826
-2026-05-01 18:46:37,020 - INFO - Successfully fetched movie/76826/credits
-2026-05-01 18:46:37,233 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:37,434 - INFO - Successfully fetched movie/8392
-2026-05-01 18:46:37,841 - INFO - Successfully fetched movie/8392/credits
-2026-05-01 18:46:38,146 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:38,248 - INFO - Successfully fetched movie/16859
-2026-05-01 18:46:38,559 - INFO - Successfully fetched movie/16859/credits
-2026-05-01 18:46:38,866 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:38,943 - INFO - Successfully fetched movie/15080
-2026-05-01 18:46:39,190 - INFO - Successfully fetched movie/15080/credits
-2026-05-01 18:46:39,512 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:39,699 - INFO - Successfully fetched movie/11621
-2026-05-01 18:46:39,950 - INFO - Successfully fetched movie/11621/credits
-2026-05-01 18:46:40,322 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:40,447 - INFO - Successfully fetched movie/15283
-2026-05-01 18:46:40,704 - INFO - Successfully fetched movie/15283/credits
-2026-05-01 18:46:41,026 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:41,207 - INFO - Successfully fetched movie/37797
-2026-05-01 18:46:41,452 - INFO - Successfully fetched movie/37797/credits
-2026-05-01 18:46:41,775 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:41,947 - INFO - Successfully fetched movie/128
-2026-05-01 18:46:42,198 - INFO - Successfully fetched movie/128/credits
-2026-05-01 18:46:42,547 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:42,699 - INFO - Successfully fetched movie/16198
-2026-05-01 18:46:42,957 - INFO - Successfully fetched movie/16198/credits
-2026-05-01 18:46:43,263 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:43,457 - INFO - Successfully fetched movie/129
-2026-05-01 18:46:43,708 - INFO - Successfully fetched movie/129/credits
-2026-05-01 18:46:44,024 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:44,203 - INFO - Successfully fetched movie/15370
-2026-05-01 18:46:44,454 - INFO - Successfully fetched movie/15370/credits
-2026-05-01 18:46:44,758 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:44,954 - INFO - Successfully fetched movie/4935
-2026-05-01 18:46:45,211 - INFO - Successfully fetched movie/4935/credits
-2026-05-01 18:46:45,518 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:45,725 - INFO - Successfully fetched movie/37933
-2026-05-01 18:46:45,954 - INFO - Successfully fetched movie/37933/credits
-2026-05-01 18:46:46,285 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:46,462 - INFO - Successfully fetched movie/12429
-2026-05-01 18:46:46,770 - INFO - Successfully fetched movie/12429/credits
-2026-05-01 18:46:47,020 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:47,020 - WARNING - No exact match for Arrietty, using top result
-2026-05-01 18:46:47,211 - INFO - Successfully fetched movie/51739
-2026-05-01 18:46:47,460 - INFO - Successfully fetched movie/51739/credits
-2026-05-01 18:46:47,778 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:47,957 - INFO - Successfully fetched movie/83389
-2026-05-01 18:46:48,221 - INFO - Successfully fetched movie/83389/credits
-2026-05-01 18:46:48,537 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:48,713 - INFO - Successfully fetched movie/149870
-2026-05-01 18:46:48,961 - INFO - Successfully fetched movie/149870/credits
-2026-05-01 18:46:49,272 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:49,461 - INFO - Successfully fetched movie/149871
-2026-05-01 18:46:49,767 - INFO - Successfully fetched movie/149871/credits
-2026-05-01 18:46:50,038 - INFO - Successfully fetched search/movie
-2026-05-01 18:46:50,211 - INFO - Successfully fetched movie/242828
-2026-05-01 18:46:50,472 - INFO - Successfully fetched movie/242828/credits
-2026-05-01 19:35:02,504 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:02,646 - INFO - Successfully fetched movie/10515
-2026-05-01 19:35:02,891 - INFO - Successfully fetched movie/10515/credits
-2026-05-01 19:35:03,156 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:03,388 - INFO - Successfully fetched movie/76826
-2026-05-01 19:35:03,640 - INFO - Successfully fetched movie/76826/credits
-2026-05-01 19:35:04,131 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:04,153 - INFO - Successfully fetched movie/8392
-2026-05-01 19:35:04,409 - INFO - Successfully fetched movie/8392/credits
-2026-05-01 19:35:04,739 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:04,912 - INFO - Successfully fetched movie/16859
-2026-05-01 19:35:05,251 - INFO - Successfully fetched movie/16859/credits
-2026-05-01 19:35:05,559 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:05,664 - INFO - Successfully fetched movie/15080
-2026-05-01 19:35:05,906 - INFO - Successfully fetched movie/15080/credits
-2026-05-01 19:35:06,785 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:06,807 - INFO - Successfully fetched movie/11621
-2026-05-01 19:35:07,157 - INFO - Successfully fetched movie/11621/credits
-2026-05-01 19:35:07,402 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:07,564 - INFO - Successfully fetched movie/15283
-2026-05-01 19:35:07,874 - INFO - Successfully fetched movie/15283/credits
-2026-05-01 19:35:08,117 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:08,318 - INFO - Successfully fetched movie/37797
-2026-05-01 19:35:08,837 - INFO - Successfully fetched movie/37797/credits
-2026-05-01 19:35:08,938 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:09,114 - INFO - Successfully fetched movie/128
-2026-05-01 19:35:09,361 - INFO - Successfully fetched movie/128/credits
-2026-05-01 19:35:09,637 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:09,949 - INFO - Successfully fetched movie/16198
-2026-05-01 19:35:10,120 - INFO - Successfully fetched movie/16198/credits
-2026-05-01 19:35:10,385 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:10,619 - INFO - Successfully fetched movie/129
-2026-05-01 19:35:10,876 - INFO - Successfully fetched movie/129/credits
-2026-05-01 19:35:11,143 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:11,361 - INFO - Successfully fetched movie/15370
-2026-05-01 19:35:11,611 - INFO - Successfully fetched movie/15370/credits
-2026-05-01 19:35:11,961 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:12,344 - INFO - Successfully fetched movie/4935
-2026-05-01 19:35:12,385 - INFO - Successfully fetched movie/4935/credits
-2026-05-01 19:35:12,653 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:12,966 - INFO - Successfully fetched movie/37933
-2026-05-01 19:35:13,121 - INFO - Successfully fetched movie/37933/credits
-2026-05-01 19:35:13,394 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:13,625 - INFO - Successfully fetched movie/12429
-2026-05-01 19:35:13,883 - INFO - Successfully fetched movie/12429/credits
-2026-05-01 19:35:14,165 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:14,165 - WARNING - No exact match for Arrietty, using top result
-2026-05-01 19:35:14,367 - INFO - Successfully fetched movie/51739
-2026-05-01 19:35:14,615 - INFO - Successfully fetched movie/51739/credits
-2026-05-01 19:35:14,892 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:15,116 - INFO - Successfully fetched movie/83389
-2026-05-01 19:35:15,372 - INFO - Successfully fetched movie/83389/credits
-2026-05-01 19:35:16,130 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:16,163 - INFO - Successfully fetched movie/149870
-2026-05-01 19:35:16,434 - INFO - Successfully fetched movie/149870/credits
-2026-05-01 19:35:16,959 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:16,983 - INFO - Successfully fetched movie/149871
-2026-05-01 19:35:17,238 - INFO - Successfully fetched movie/149871/credits
-2026-05-01 19:35:17,514 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:17,738 - INFO - Successfully fetched movie/242828
-2026-05-01 19:35:17,983 - INFO - Successfully fetched movie/242828/credits
-2026-05-01 19:35:18,700 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:18,861 - INFO - Successfully fetched movie/683127
-2026-05-01 19:35:19,066 - INFO - Successfully fetched movie/683127/credits
-2026-05-01 19:35:19,516 - INFO - Successfully fetched search/movie
-2026-05-01 19:35:20,241 - INFO - Successfully fetched movie/337703
-2026-05-01 19:35:20,361 - INFO - Successfully fetched movie/337703/credits
+2026-05-30 11:39:00,362 - ghibli_collector - INFO - Fetching films data
+2026-05-30 11:39:00,856 - ghibli_collector - INFO - films: validation passed (22 records)
+2026-05-30 11:39:00,856 - ghibli_collector - INFO - Fetching people data
+2026-05-30 11:39:01,268 - ghibli_collector - INFO - people: validation passed (57 records)
+2026-05-30 11:39:01,268 - ghibli_collector - INFO - Fetching locations data
+2026-05-30 11:39:01,777 - ghibli_collector - INFO - locations: validation passed (25 records)
+2026-05-30 11:39:01,777 - ghibli_collector - INFO - Fetching species data
+2026-05-30 11:39:02,147 - ghibli_collector - INFO - species: validation passed (7 records)
+2026-05-30 11:39:02,147 - ghibli_collector - INFO - Fetching vehicles data
+2026-05-30 11:39:02,586 - ghibli_collector - INFO - vehicles: validation passed (3 records)
+2026-05-30 11:39:02,588 - ghibli_collector - INFO - Saved films.json
+2026-05-30 11:39:02,590 - ghibli_collector - INFO - Saved people.json
+2026-05-30 11:39:02,591 - ghibli_collector - INFO - Saved locations.json
+2026-05-30 11:39:02,591 - ghibli_collector - INFO - Saved species.json
+2026-05-30 11:39:02,592 - ghibli_collector - INFO - Saved vehicles.json
+2026-05-30 11:39:02,592 - ghibli_collector - INFO - Successfully saved all Ghibli data
+2026-05-30 11:39:05,685 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:05,704 - tmdb_collector - INFO - Fetched movie/10515
+2026-05-30 11:39:05,962 - tmdb_collector - INFO - Fetched movie/10515/credits
+2026-05-30 11:39:05,963 - tmdb_collector - INFO - Saved Castle in the Sky
+2026-05-30 11:39:06,203 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:06,460 - tmdb_collector - INFO - Fetched movie/76826
+2026-05-30 11:39:06,706 - tmdb_collector - INFO - Fetched movie/76826/credits
+2026-05-30 11:39:06,707 - tmdb_collector - INFO - Saved Grave of the Fireflies
+2026-05-30 11:39:06,959 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:07,212 - tmdb_collector - INFO - Fetched movie/8392
+2026-05-30 11:39:07,525 - tmdb_collector - INFO - Fetched movie/8392/credits
+2026-05-30 11:39:07,530 - tmdb_collector - INFO - Saved My Neighbor Totoro
+2026-05-30 11:39:07,715 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:07,960 - tmdb_collector - INFO - Fetched movie/16859
+2026-05-30 11:39:08,211 - tmdb_collector - INFO - Fetched movie/16859/credits
+2026-05-30 11:39:08,213 - tmdb_collector - INFO - Saved Kiki's Delivery Service
+2026-05-30 11:39:08,463 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:08,711 - tmdb_collector - INFO - Fetched movie/128
+2026-05-30 11:39:09,033 - tmdb_collector - INFO - Fetched movie/128/credits
+2026-05-30 11:39:09,038 - tmdb_collector - INFO - Saved Princess Mononoke
+2026-05-30 11:39:09,213 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:09,465 - tmdb_collector - INFO - Fetched movie/129
+2026-05-30 11:39:09,715 - tmdb_collector - INFO - Fetched movie/129/credits
+2026-05-30 11:39:09,717 - tmdb_collector - INFO - Saved Spirited Away
+2026-05-30 11:39:10,032 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:10,213 - tmdb_collector - INFO - Fetched movie/4935
+2026-05-30 11:39:10,474 - tmdb_collector - INFO - Fetched movie/4935/credits
+2026-05-30 11:39:10,476 - tmdb_collector - INFO - Saved Howl's Moving Castle
+2026-05-30 11:39:10,721 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:10,969 - tmdb_collector - INFO - Fetched movie/12429
+2026-05-30 11:39:11,228 - tmdb_collector - INFO - Fetched movie/12429/credits
+2026-05-30 11:39:11,229 - tmdb_collector - INFO - Saved Ponyo
+2026-05-30 11:39:11,471 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:39:11,723 - tmdb_collector - INFO - Fetched movie/149870
+2026-05-30 11:39:11,976 - tmdb_collector - INFO - Fetched movie/149870/credits
+2026-05-30 11:39:11,977 - tmdb_collector - INFO - Saved The Wind Rises
+2026-05-30 11:41:34,004 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:34,044 - tmdb_collector - INFO - Fetched movie/10515
+2026-05-30 11:41:34,283 - tmdb_collector - INFO - Fetched movie/10515/credits
+2026-05-30 11:41:34,284 - tmdb_collector - INFO - Saved Castle in the Sky
+2026-05-30 11:41:34,531 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:34,779 - tmdb_collector - INFO - Fetched movie/76826
+2026-05-30 11:41:35,031 - tmdb_collector - INFO - Fetched movie/76826/credits
+2026-05-30 11:41:35,032 - tmdb_collector - INFO - Saved Grave of the Fireflies
+2026-05-30 11:41:35,292 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:35,533 - tmdb_collector - INFO - Fetched movie/8392
+2026-05-30 11:41:35,887 - tmdb_collector - INFO - Fetched movie/8392/credits
+2026-05-30 11:41:35,889 - tmdb_collector - INFO - Saved My Neighbor Totoro
+2026-05-30 11:41:36,037 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:36,657 - tmdb_collector - INFO - Fetched movie/16859
+2026-05-30 11:41:36,677 - tmdb_collector - INFO - Fetched movie/16859/credits
+2026-05-30 11:41:36,679 - tmdb_collector - INFO - Saved Kiki's Delivery Service
+2026-05-30 11:41:37,115 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:37,320 - tmdb_collector - INFO - Fetched movie/15080
+2026-05-30 11:41:37,935 - tmdb_collector - INFO - Fetched movie/15080/credits
+2026-05-30 11:41:37,937 - tmdb_collector - INFO - Saved Only Yesterday
+2026-05-30 11:41:38,163 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:38,447 - tmdb_collector - INFO - Fetched movie/11621
+2026-05-30 11:41:38,653 - tmdb_collector - INFO - Fetched movie/11621/credits
+2026-05-30 11:41:38,655 - tmdb_collector - INFO - Saved Porco Rosso
+2026-05-30 11:41:38,856 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:39,164 - tmdb_collector - INFO - Fetched movie/15283
+2026-05-30 11:41:39,471 - tmdb_collector - INFO - Fetched movie/15283/credits
+2026-05-30 11:41:39,472 - tmdb_collector - INFO - Saved Pom Poko
+2026-05-30 11:41:39,585 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:39,841 - tmdb_collector - INFO - Fetched movie/37797
+2026-05-30 11:41:40,084 - tmdb_collector - INFO - Fetched movie/37797/credits
+2026-05-30 11:41:40,087 - tmdb_collector - INFO - Saved Whisper of the Heart
+2026-05-30 11:41:40,240 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:40,491 - tmdb_collector - INFO - Fetched movie/128
+2026-05-30 11:41:40,812 - tmdb_collector - INFO - Fetched movie/128/credits
+2026-05-30 11:41:40,815 - tmdb_collector - INFO - Saved Princess Mononoke
+2026-05-30 11:41:41,095 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:41,341 - tmdb_collector - INFO - Fetched movie/16198
+2026-05-30 11:41:41,632 - tmdb_collector - INFO - Fetched movie/16198/credits
+2026-05-30 11:41:41,634 - tmdb_collector - INFO - Saved My Neighbors the Yamadas
+2026-05-30 11:41:41,745 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:41,994 - tmdb_collector - INFO - Fetched movie/129
+2026-05-30 11:41:42,245 - tmdb_collector - INFO - Fetched movie/129/credits
+2026-05-30 11:41:42,247 - tmdb_collector - INFO - Saved Spirited Away
+2026-05-30 11:41:42,590 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:42,889 - tmdb_collector - INFO - Fetched movie/15370
+2026-05-30 11:41:43,092 - tmdb_collector - INFO - Fetched movie/15370/credits
+2026-05-30 11:41:43,098 - tmdb_collector - INFO - Saved The Cat Returns
+2026-05-30 11:41:43,314 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:43,502 - tmdb_collector - INFO - Fetched movie/4935
+2026-05-30 11:41:43,756 - tmdb_collector - INFO - Fetched movie/4935/credits
+2026-05-30 11:41:43,758 - tmdb_collector - INFO - Saved Howl's Moving Castle
+2026-05-30 11:41:44,100 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:44,346 - tmdb_collector - INFO - Fetched movie/37933
+2026-05-30 11:41:44,595 - tmdb_collector - INFO - Fetched movie/37933/credits
+2026-05-30 11:41:44,600 - tmdb_collector - INFO - Saved Tales from Earthsea
+2026-05-30 11:41:44,755 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:45,005 - tmdb_collector - INFO - Fetched movie/12429
+2026-05-30 11:41:45,256 - tmdb_collector - INFO - Fetched movie/12429/credits
+2026-05-30 11:41:45,257 - tmdb_collector - INFO - Saved Ponyo
+2026-05-30 11:41:45,602 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:45,602 - tmdb_collector - WARNING - No exact match for Arrietty, using top result
+2026-05-30 11:41:45,852 - tmdb_collector - INFO - Fetched movie/51739
+2026-05-30 11:41:46,097 - tmdb_collector - INFO - Fetched movie/51739/credits
+2026-05-30 11:41:46,102 - tmdb_collector - INFO - Saved Arrietty
+2026-05-30 11:41:46,345 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:46,593 - tmdb_collector - INFO - Fetched movie/83389
+2026-05-30 11:41:46,859 - tmdb_collector - INFO - Fetched movie/83389/credits
+2026-05-30 11:41:46,863 - tmdb_collector - INFO - Saved From Up on Poppy Hill
+2026-05-30 11:41:47,011 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:47,263 - tmdb_collector - INFO - Fetched movie/149870
+2026-05-30 11:41:47,519 - tmdb_collector - INFO - Fetched movie/149870/credits
+2026-05-30 11:41:47,521 - tmdb_collector - INFO - Saved The Wind Rises
+2026-05-30 11:41:47,865 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:48,105 - tmdb_collector - INFO - Fetched movie/149871
+2026-05-30 11:41:48,360 - tmdb_collector - INFO - Fetched movie/149871/credits
+2026-05-30 11:41:48,363 - tmdb_collector - INFO - Saved The Tale of the Princess Kaguya
+2026-05-30 11:41:48,607 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:48,869 - tmdb_collector - INFO - Fetched movie/242828
+2026-05-30 11:41:49,113 - tmdb_collector - INFO - Fetched movie/242828/credits
+2026-05-30 11:41:49,121 - tmdb_collector - INFO - Saved When Marnie Was There
+2026-05-30 11:41:49,364 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:49,612 - tmdb_collector - INFO - Fetched movie/683127
+2026-05-30 11:41:49,887 - tmdb_collector - INFO - Fetched movie/683127/credits
+2026-05-30 11:41:49,891 - tmdb_collector - INFO - Saved Earwig and the Witch
+2026-05-30 11:41:50,126 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 11:41:50,386 - tmdb_collector - INFO - Fetched movie/337703
+2026-05-30 11:41:50,610 - tmdb_collector - INFO - Fetched movie/337703/credits
+2026-05-30 11:41:50,615 - tmdb_collector - INFO - Saved The Red Turtle
+2026-05-30 12:19:30,585 - tmdb_collector - INFO - Fetched search/movie
+2026-05-30 12:20:36,513 - tmdb_collector - INFO - Fetched search/movie

@@ -4,8 +4,10 @@ import glob
 import pandas as pd
 import requests
 from collections import defaultdict
+from pathlib import Path
 
-DATA_DIR = "../data/raw/ghibli"
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data" / "raw" / "ghibli"
 FILMS_FILE = os.path.join(DATA_DIR, "films.json")
 
 

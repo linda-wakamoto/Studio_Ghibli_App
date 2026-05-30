@@ -1,3 +1,3 @@
-from model import predict_film
+from api.model import predict_film
 print(predict_film(["magic", "nature"]))
 

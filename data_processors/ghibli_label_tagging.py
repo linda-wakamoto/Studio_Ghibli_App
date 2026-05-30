@@ -1,12 +1,14 @@
 import pandas as pd
 import re
 from titlecase import titlecase
+from pathlib import Path
 
 # =========================================================
 # LOAD DATA
 # =========================================================
-df = pd.read_csv("../data/processed/ghibli_tmdb_merged.csv")
-df["title"] = df["title"].fillna("").str.lower()
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data" / "processed"
+CSV_PATH = DATA_DIR / "ghibli_tmdb_merged.csv"
 
 # =========================================================
 # MANUAL LABELS
@@ -146,29 +148,30 @@ MANUAL_LABELS = {
 }
 
 # =========================================================
-# LABEL ASSIGNMENT
+# CORE FUNCTION
 # =========================================================
-def assign_labels(row):
-    title = row["title"]
+def build_labeled_dataset():
+    df = pd.read_csv(CSV_PATH)
 
-    found = set()
+    df["title"] = df["title"].fillna("").str.lower()
 
-    if title in MANUAL_LABELS:
-        found.update(MANUAL_LABELS[title])
+    def assign_labels(row):
+        title = row["title"]
+        return sorted(MANUAL_LABELS.get(title, ["other"]))
 
-    return sorted(found) if found else ["other"]
+    df["labels"] = df.apply(assign_labels, axis=1)
 
-# =========================================================
-# APPLY
-# =========================================================
-df["labels"] = df.apply(assign_labels, axis=1)
-df["title"] = df["title"].fillna("").apply(titlecase)
+    df["title"] = df["title"].fillna("").apply(titlecase)
+
+    return df
 
 # =========================================================
 # SAVE
 # =========================================================
-output_path = "../data/processed/ghibli_interest_labels.csv"
+if __name__ == "__main__":
+    df = build_labeled_dataset()
 
-df.to_csv(output_path, index=False)
+    output_path = DATA_DIR / "final_dataset.csv"
+    df.to_csv(output_path, index=False)
 
-print("Saved:", output_path)
+    print("Saved:", output_path)

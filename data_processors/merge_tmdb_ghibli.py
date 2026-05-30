@@ -163,9 +163,12 @@ def save_processed(df: pd.DataFrame):
 # MAIN
 # =========================================================
 if __name__ == "__main__":
+    from pathlib import Path
 
-    tmdb_folder = os.path.join("../data", "raw", "tmdb")
-    ghibli_csv = os.path.join("../data", "processed", "ghibli_entities.csv")
+    BASE_DIR = Path(__file__).resolve().parent.parent
+
+    tmdb_folder = BASE_DIR / "data" / "raw" / "tmdb"
+    ghibli_csv = BASE_DIR / "data" / "processed" / "ghibli_entities.csv"
 
     tmdb_data = load_json_folder(tmdb_folder)
     ghibli_data = load_ghibli_csv(ghibli_csv)
