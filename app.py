@@ -7,11 +7,11 @@ import base64
 import requests
 
 # --- API Config ---
-API_URL = os.getenv("API_URL", "http://localhost:8080/recommend")
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8080/recommend")
 
 # --- Dynamic Path Resolution ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH = os.path.join(BASE_DIR, "", "data", "processed", "final_dataset.csv")
+CSV_PATH = os.path.join(BASE_DIR, "data", "processed", "final_dataset.csv")
 df = pd.read_csv(CSV_PATH)
 
 st.set_page_config(page_title="Studio Ghibli Film Recommender", layout="wide")
@@ -90,7 +90,8 @@ if mode == "Image Select":
     if "carousel_page" not in st.session_state:
         st.session_state.carousel_page = 0
 
-    view_type = st.radio("Display Layout", ["Slideshow View", "Grid View"], horizontal=True, label_visibility="collapsed")
+    view_type = st.radio("Display Layout", ["Slideshow View", "Grid View"], horizontal=True,
+                         label_visibility="collapsed")
     st.markdown("---")
     total_films = len(df)
 
@@ -137,7 +138,10 @@ if mode == "Image Select":
         global_idx = idx if view_type == "Grid View" else (start_idx + idx)
 
         with col:
-            img_path = os.path.join(BASE_DIR, "", "data", "movie_images", row["title"].replace(" ", "_"), "image.jpg")
+            # FIX: Lowercase normalization matching your system's path architecture
+            clean_folder = row["title"].lower().replace(" ", "_")
+            img_path = os.path.join(BASE_DIR, "data", "movie_images", clean_folder, "image.jpg")
+
             if os.path.exists(img_path):
                 with open(img_path, "rb") as f:
                     encoded = base64.b64encode(f.read()).decode()
@@ -157,7 +161,8 @@ if mode == "Image Select":
     selected_row = df.iloc[st.session_state.selected_idx]
 
     try:
-        labels_data = ast.literal_eval(selected_row['labels']) if isinstance(selected_row['labels'], str) else selected_row['labels']
+        labels_data = ast.literal_eval(selected_row['labels']) if isinstance(selected_row['labels'], str) else \
+        selected_row['labels']
         cleaned_labels = [str(label).strip().replace("_", " ") for label in labels_data if str(label).strip()]
     except Exception:
         cleaned_labels = []
@@ -181,6 +186,7 @@ if mode == "Image Select":
 if mode == "Label Select":
     st.subheader("Choose Your Interests")
 
+
     def parse_list_column(column_name):
         values = []
         for item in df[column_name]:
@@ -192,6 +198,7 @@ if mode == "Label Select":
                 pass
         return sorted(set(str(v).strip().replace("_", " ") for v in values))
 
+
     all_genres = parse_list_column("genres")
     all_labels = parse_list_column("labels")
     all_species = parse_list_column("species")
@@ -200,13 +207,16 @@ if mode == "Label Select":
     selected_labels = st.multiselect("Labels", all_labels)
     selected_species = st.multiselect("Species", all_species)
 
-    selected_features = selected_genres + selected_labels + selected_species
+    # UI Clean features array
+    display_features = selected_genres + selected_labels + selected_species
+
+    # FIX: Re-convert clean UI space strings to data underscores for backend compatibility
+    selected_features = [f.replace(" ", "_") for f in display_features]
 
     if selected_features:
         st.subheader("Recommended Films")
 
         try:
-            # Setting top_k to 100 to pull all potential matches in the database
             response = requests.get(API_URL, params={"features": selected_features, "top_k": 100})
 
             if response.status_code == 200:
@@ -226,7 +236,6 @@ if mode == "Label Select":
                     desc = html.escape(result["description"])
                     rating = result["tmdb_rating"]
 
-                    # Percent match has been completely stripped out here
                     st.markdown(
                         (
                             '<div style="padding:20px; border-radius:10px; margin-bottom:10px; background-color:#FAF9F6; border: 1px solid #E5E4E2;">'
@@ -238,7 +247,9 @@ if mode == "Label Select":
                         unsafe_allow_html=True
                     )
 
-                    img_path = os.path.join(BASE_DIR, "", "data", "movie_images", result["title"].replace(" ", "_"), "image.jpg")
+                    # Look inside lowercase paths for matching posters
+                    clean_folder_name = result["title"].lower().replace(" ", "_")
+                    img_path = os.path.join(BASE_DIR, "data", "movie_images", clean_folder_name, "image.jpg")
                     if os.path.exists(img_path):
                         st.image(img_path, width=260)
                         st.markdown("<br>", unsafe_allow_html=True)

@@ -1,6 +1,0 @@
-pandas
-joblib
-numpy
-matplotlib
-fastapi
-uvicorn

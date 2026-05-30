@@ -28,9 +28,17 @@ graph TD
         E -->|User Interaction| F[End User]
 ```
 
+## Technology Stack & Tools Used
+* **Frontend Interface:** Streamlit (Custom Themed Layout)
+* **Backend Framework:** FastAPI / Uvicorn
+* **Containerization:** Docker & Google Cloud Artifact Registry
+* **Cloud Orchestration:** Google Cloud Build (`cloudbuild.yaml`)
+* **Production Hosting:** Google Cloud Run (Serverless Environment)
+
 ## Deployment Links
-- **Interactive Streamlit Web Application:** [Live App Link](your_deployed_app_url)
-- **Model Inference API Endpoint:** [Live API Link](your_deployed_api_url)
+- **Interactive Streamlit Web Application:** [Live App Link](https://app-service-750112593840.us-central1.run.app/)
+- **Model Inference API Endpoint:** [Live API Link](https://api-service-750112593840.us-central1.run.app/docs)
+(features: type in the labels, species, genres, and top_k: type in the number of movie recommendations you would like)
 
 ---
 
@@ -61,6 +69,8 @@ source venv/bin/activate
 
 ### 3. Install dependencies
 ```bash
+pip install -r requirements_app.txt
+pip install -r requirements_api.txt
 pip install -r requirements.txt
 ```
 ---
@@ -110,7 +120,7 @@ The final processed dataset is final_dataset.csv, and has data from all four sou
 python analysis/analyze_data.py
 ```
 Outputs:
-- Visualization plots saved directly into analysis_tmdb_ghibli/
+- Visualization plots saved directly into analysis/
 - Findings are written in REPORT.md from the generate_report.py script
 ---
 
@@ -136,18 +146,68 @@ streamlit run app.py
 
 ### Step 6: Containerization
 
-How to run this on Podman:
-```bash
-# Build the containers
-docker build -t ghibli-app ./app
-docker build -t ghibli-api ./api
+How to run this on Podman (PowerShell)
+1. Initialize the Network Environment
 
-# Run the services
-docker run -p 8501:8501 ghibli-app
-docker run -p 8080:8080 ghibli-api
+Create the dedicated network bridge so the services can discover each other:
+
+```powershell
+podman network create ghibli-network
 ```
 
+2. Build and launch the FastAPI image
+
+```powershell
+podman build -t ghibli-api -f api/Dockerfile .
+
+podman run -d `
+  --name api-service `
+  --network ghibli-network `
+  -p 8080:8080 `
+  localhost/ghibli-api
+```
+
+3. Build and Launch the Frontend App
+
+Build the Streamlit image
+```powershell
+podman build -t ghibli-app -f Dockerfile.app .
+```
+
+Run the container
+```powershell
+podman run -d `
+  --name app-service `
+  --network ghibli-network `
+  -p 8501:8501 `
+  -e API_URL="http://api-service:8080/recommend" `
+  localhost/ghibli-app
+```
+Local Access Verification: 
+
+Once running (podman ps), open your browser to http://localhost:8501 for the user interface, or http://localhost:8080/docs for the interactive Swagger API documentation.
+
 ---
+
+### Step 7: Continuous Cloud Deployment
+
+The cloud infrastructure is pushed using the Google Cloud SDK CLI toolchain:
+
+Submit Backend Image: 
+
+```powershell
+gcloud builds submit --tag us-central1-docker.pkg.dev/[PROJECT_ID]/ghibli-repo/api-service:v1 api/
+```
+
+Submit Frontend Image: 
+
+```powershell
+gcloud builds submit --config=cloudbuild.yaml .
+```
+
+Deploy Web Routing: 
+
+Executed via Serverless Google Cloud Run deployment commands with dynamic environment variable cross-linking to connect the UI frontend securely to the hosted API core.
 
 ## Dependencies
 
@@ -162,7 +222,7 @@ docker run -p 8080:8080 ghibli-api
 - scikit-learn
 - wordcloud
 - joblib
-- ntlk
+- nltk
 ---
 
 ## Data Sources
@@ -233,12 +293,12 @@ Provides:
   - final_dataset.csv (merged dataset and the labels and images - used for app and modeling)
 
 ### Models
-- data/models
+- models/
   - film_model.pkl
   
 ### Visualizations
 
-- jaccard_score_distribution.png (Dual-panel distribution modeling global matrix sparsity vs. active top-K return scores for the prediction model)
+- jaccard_report.png (Dual-panel distribution modeling global matrix sparsity vs. active top-K return scores for the prediction model)
 
 - analysis_tmdb_ghibli/
   - wordcloud.png 

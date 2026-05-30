@@ -1,61 +1,7 @@
-import os
-from pathlib import Path
-from datetime import datetime
 
-# =========================================================
-# ABSOLUTE PROJECT ROOT (ANCHOR THIS FILE)
-# =========================================================
-BASE_DIR = Path(__file__).resolve().parent
-
-# go up until you hit STATS418_Project
-# (this avoids PyCharm / pytest / docker issues)
-while BASE_DIR.name != "STATS418_Project":
-    BASE_DIR = BASE_DIR.parent
-
-PROJECT_ROOT = BASE_DIR
-
-print("PROJECT_ROOT:", PROJECT_ROOT)
-
-# =========================================================
-# OUTPUT PATH
-# =========================================================
-OUTPUT_PATH = PROJECT_ROOT / "report.md"
-
-print("OUTPUT_PATH:", OUTPUT_PATH)
-
-# =========================================================
-# FIGURES
-# =========================================================
-FIG_DIR = PROJECT_ROOT / "analysis"
-
-def fig(name):
-    return f"analysis/{name}"
-
-def fig_api(name):
-    return name
-
-figures = {
-    "wordcloud": fig("wordcloud.png"),
-    "ratings": fig("rating_distributions.png"),
-    "genres": fig("top_genres.png"),
-    "genre_ratings": fig("genre_ratings.png"),
-    "labels": fig("top_labels.png"),
-    "label_ratings": fig("label_ratings.png"),
-    "revenue": fig("revenue_by_movie.png"),
-    "budget": fig("budget_by_movie.png"),
-    "timeline": fig("timeline.png"),
-    "species": fig("species_distribution.png"),
-    "correlation": fig("genre_label_species_correlation.png"),
-    "model": fig_api("jaccard_report.png")
-}
-
-# =========================================================
-# REPORT CONTENT
-# =========================================================
-report = f"""
 # Studio Ghibli Data Analysis & Recommendation Report
 
-Generated: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+Generated: 2026-05-30 14:29:12
 
 ---
 
@@ -81,57 +27,57 @@ The goal is to:
 ### Word Cloud
 Main themes: human/family, nature, find.
 
-![wordcloud]({figures["wordcloud"]})
+![wordcloud](analysis/wordcloud.png)
 
 ### Ratings Distribution
 Showing right-skewed satisfaction; median 7.79, mean 7.64.
 
-![ratings]({figures["ratings"]})
+![ratings](analysis/rating_distributions.png)
 
 ### Genres
 Most common genres: Animation, Fantasy, Family.
 
-![genres]({figures["genres"]})
+![genres](analysis/top_genres.png)
 
 ### Genre Ratings
 Average ratings were similar across genres, but Action and History had the highest.
 
-![genre_ratings]({figures["genre_ratings"]})
+![genre_ratings](analysis/genre_ratings.png)
 
 ### Labels
 Most common labels: family and friendship.
 
-![labels]({figures["labels"]})
+![labels](analysis/top_labels.png)
 
 ### Label Ratings
 Average ratings were similar across labels, but dragons and strong lead had the highest.
 
-![label_ratings]({figures["label_ratings"]})
+![label_ratings](analysis/label_ratings.png)
 
 ### Revenue
 Spirited Away as the peak revenue generator with a remarkably efficient budget, Howl's Moving Castle coming in second.
 
-![revenue]({figures["revenue"]})
+![revenue](analysis/revenue_by_movie.png)
 
 ### Budget
 Tale of the Princess Kaguya had the highest budget, but Howl's Moving Castle and Spirited Away did not - even with the top two highest revenues.
 
-![budget]({figures["budget"]})
+![budget](analysis/budget_by_movie.png)
 
 ### Timeline
 The earliest film was Castle in the Sky and the latest in this dataset was Earwig and the Witch.
 
-![timeline]({figures["timeline"]})
+![timeline](analysis/timeline.png)
 
 ### Species
 Most common species were humans, then cats, and there were 7 species in total.
 
-![species]({figures["species"]})
+![species](analysis/species_distribution.png)
 
 ### Correlation Heatmap
 Shows a comprehensive correlation analysis on all three features of the model, and the highest correlations were between the History genre and Romance genre, castle label and Action genre, and dragon species and Action genre.
   
-![correlation]({figures["correlation"]})
+![correlation](analysis/genre_label_species_correlation.png)
 
 ---
 
@@ -149,7 +95,7 @@ A ∩ B / A ∪ B
 
 Dual-panel distribution modeling global matrix sparsity vs. active top-K return scores for the prediction model:
 
-![model]({figures["model"]})
+![model](jaccard_report.png)
 ---
 
 ## Model Highlights
@@ -224,14 +170,3 @@ and had to make sure that their solutions matched my real data, and debug any is
 
 ---
 
-"""
-
-# =========================================================
-# SAVE REPORT
-# =========================================================
-os.makedirs(PROJECT_ROOT, exist_ok=True)
-
-with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-    f.write(report)
-
-print("Report generated at:", OUTPUT_PATH)
