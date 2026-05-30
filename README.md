@@ -21,11 +21,60 @@ The goal is to:
 
 ```mermaid
 graph TD
-        A[TMDB & Ghibli APIs] -->|Python Scripts| B[(Data Processing / CSV)]
-        B -->|Model Training| C[Serialized Matrices / PKL]
-        C -->|Separate Deployment| D[Model API Service on Cloud Run]
-        D -->|API Calls / JSON| E[Streamlit Web App]
-        E -->|User Interaction| F[End User]
+    %% 1. Data sources and collection methods
+    subgraph "1. Data Sources and Collection Methods"
+        A1[Studio Ghibli API] -->|ghibli_api_collector.py| B1[data/raw/ghibli/]
+        A2[TMDB API] -->|tmdb_api_collector.py| B2[data/raw/ghibli/tmdb/]
+        
+        S1[Official Ghibli Website] -->|Scraped/Downloaded| IM[data/movie_images/]
+        S2[Manual Asset Uploads] -->|Hand-Curated| IM
+    end
+
+    %% 2. Data storage/database
+    subgraph "2. Data Storage / Database (Local File Structure)"
+        B1 -->|Contains| J1[films.json, locations.json, people.json, species.json, vehicles.json]
+        B2 -->|Contains| J2[TMDB .json files]
+        
+        J1 -->|build_ghibli_entities.py| P1[data/processed/ghibli_entities.csv]
+        P1 & J2 -->|Merged| P2[data/processed/ghibli_tmdb_merged.csv]
+        
+        P2 & IM -->|ghibli_image_matcher.py| P3[ghibli_tmdb_mapped_images.csv]
+        P3 -->|ghibli_label_tagging.py| P4[(data/processed/final_dataset.csv)]
+    end
+
+    %% 3. Model training pipeline
+    subgraph "3. Model Training Pipeline"
+        P4 -->|train.py| M1[models/film_model.pkl]
+        P4 -->|train.py| R1[jaccard_report.png]
+        M1 -->|generate_report.py| R2[Performance Report Metrics]
+    end
+
+    %% 4 & 5 & 6. Model API Service, Web App Interface, and Deployment Infrastructure
+    subgraph "6. Deployment Infrastructure (Cloud Run via CI/CD)"
+        CB_ENG[Docker / Podman Build Engine]
+        M1 & REQ_API[requirements_api.txt] & DF_API[api/Dockerfile] & M_PY[api/model.py] -->|Compile| CB_ENG
+        REQ_APP[requirements_app.txt] & DF_APP[Dockerfile.app] & REQ_GLOBAL[requirements.txt] -->|Compile| CB_ENG
+        
+        CB_ENG -->|cloudbuild.yaml| AR[Google Artifact Registry]
+        
+        subgraph "4. Model API Service"
+            AR -->|Deploy Container| D1[FastAPI Service on Cloud Run]
+        end
+        
+        subgraph "5. Web Application Interface"
+            AR -->|Deploy Container| UI[Streamlit Web App]
+        end
+    end
+
+    %% 7. How components communicate with each other
+    subgraph "7. How Components Communicate (API Calls & Data Flow)"
+        D1 ---->|HTTP GET Requests / JSON Payload| UI
+        UI ---->|User Interaction| User[End User]
+    end
+
+    %% Styling
+    style P4 fill:#2cf,stroke:#333,stroke-width:2px
+    style M1 fill:#f96,stroke:#333,stroke-width:2px
 ```
 
 ## Technology Stack & Tools Used
