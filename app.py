@@ -20,7 +20,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown(
-    "<p style='text-align: center; font-style: italic; color: #6B7A82; font-size: 1.2rem;'>Discover the magic of Studio Ghibli</p>",
+    "<p style='text-align: center; font-style: italic; color: #6B7A82; font-size: 1.2rem;'>スタジオジブリの作品</p>",
     unsafe_allow_html=True
 )
 st.markdown("---")
@@ -62,7 +62,15 @@ with st.sidebar:
     mode = st.radio("Choose mode", ["Image Select", "Label Select"])
 
     st.markdown("---")
-    st.caption("Data source: Studio Ghibli API & Local Metadata")
+    st.caption("Data sources:")
+    st.caption("Studio Ghibli API")
+    st.caption("The Movie Database")
+    st.caption("STUDIO GHIBLI INC")
+    st.markdown("---")
+    st.caption("Linda Wakamoto")
+    st.caption("STATS418")
+    st.caption("Spring 2026")
+
 
 # =========================================================
 # IMAGE MODE
@@ -79,38 +87,69 @@ if mode == "Image Select":
         st.session_state.carousel_page = 0
 
     # -------------------------
-    # IMAGE GALLERY (SLIDESHOW)
+    # VIEW SETTINGS
     # -------------------------
-    ITEMS_PER_PAGE = 3
+    view_type = st.radio(
+        "Display Layout",
+        ["Slideshow View", "Grid View"],
+        horizontal=True,
+        label_visibility="collapsed"
+    )
+
+    st.markdown("---")
+
     total_films = len(df)
-    max_page = (total_films - 1) // ITEMS_PER_PAGE
 
-    # Control Buttons (Prev / Next Row)
-    btn_col1, space_col, btn_col2 = st.columns([1, 6, 1])
+    # =========================================================
+    # OPTION A: SLIDESHOW VIEW (CAROUSEL)
+    # =========================================================
+    if view_type == "Slideshow View":
+        ITEMS_PER_PAGE = 3
+        max_page = (total_films - 1) // ITEMS_PER_PAGE
 
-    with btn_col1:
-        if st.button("← Back", use_container_width=True):
-            if st.session_state.carousel_page > 0:
-                st.session_state.carousel_page -= 1
-                st.rerun()
+        # -------------------------
+        # 1. NAVIGATION BUTTONS
+        # -------------------------
+        btn_col1, space_col, btn_col2 = st.columns([1, 6, 1])
 
-    with btn_col2:
-        if st.button("Next →", use_container_width=True):
-            if st.session_state.carousel_page < max_page:
-                st.session_state.carousel_page += 1
-                st.rerun()
+        with btn_col1:
+            if st.button("← Back", use_container_width=True):
+                if st.session_state.carousel_page > 0:
+                    st.session_state.carousel_page -= 1
+                    st.rerun()
 
-    start_idx = st.session_state.carousel_page * ITEMS_PER_PAGE
-    end_idx = min(start_idx + ITEMS_PER_PAGE, total_films)
-    page_df = df.iloc[start_idx:end_idx]
+        with btn_col2:
+            if st.button("Next →", use_container_width=True):
+                if st.session_state.carousel_page < max_page:
+                    st.session_state.carousel_page += 1
+                    st.rerun()
 
-    # Render the current slide items horizontally
-    # Dynamic columns matching the current page's item count prevents spacing stretching
-    cols = st.columns(len(page_df))
+        st.write("")
+
+        # -------------------------
+        # 2. IMAGE DATA SLICING
+        # -------------------------
+        start_idx = st.session_state.carousel_page * ITEMS_PER_PAGE
+        end_idx = min(start_idx + ITEMS_PER_PAGE, total_films)
+        page_df = df.iloc[start_idx:end_idx]
+
+    # =========================================================
+    # OPTION B: GRID VIEW (SHOW ALL FILMS)
+    # =========================================================
+    else:
+        page_df = df
+        start_idx = 0
+
+    # -------------------------
+    # RENDERING THE IMAGE CARDS
+    # -------------------------
+    GRID_COLUMNS = 4 if view_type == "Grid View" else len(page_df)
+    cols = st.columns(GRID_COLUMNS)
 
     for idx, (_, row) in enumerate(page_df.iterrows()):
-        col = cols[idx]
-        global_idx = start_idx + idx  # Track true index in original dataframe
+        col_target_idx = idx % GRID_COLUMNS if view_type == "Grid View" else idx
+        col = cols[col_target_idx]
+        global_idx = idx if view_type == "Grid View" else (start_idx + idx)
 
         with col:
             img_path = os.path.join("data/movie_images", row["title"].replace(" ", "_"), "image.jpg")
@@ -119,12 +158,11 @@ if mode == "Image Select":
                 with open(img_path, "rb") as f:
                     encoded = base64.b64encode(f.read()).decode()
 
-                # Render fixed smaller height cards to ensure they sit on one screen page
                 st.markdown(
                     f"""
-                    <div style="text-align: center; width: 100%;">
+                    <div style="text-align: center; width: 100%; margin-top: 15px;">
                         <img src="data:image/jpeg;base64,{encoded}" 
-                             style="max-width: 100%; height: 240px; object-fit: contain; border-radius: 8px;">
+                             style="max-width: 100%; height: 200px; object-fit: contain; border-radius: 8px;">
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -135,44 +173,33 @@ if mode == "Image Select":
                 st.rerun()
 
     # -------------------------
-    # SHOW DETAILS
+    # FIXED SHOW DETAILS (Completely unindented & clean string)
     # -------------------------
-    selected_row = df.iloc[st.session_state.selected_idx]
+    st.markdown("<br>", unsafe_allow_html=True)
 
+    selected_row = df.iloc[st.session_state.selected_idx]
     labels_data = selected_row['labels']
 
     try:
         labels_data = ast.literal_eval(selected_row['labels']) if isinstance(selected_row['labels'], str) else \
         selected_row['labels']
-
         cleaned_labels = [str(label).strip().replace("_", " ") for label in labels_data if label.strip()]
     except Exception:
         cleaned_labels = []
 
     labels_string = ", ".join(cleaned_labels)
 
-    st.markdown(
-        f"""
-        <div style="font-size:25px; font-weight:bold; color:#4A7c59; margin-top:20px;">
-            🌸 {selected_row["title"]}
-        </div>
-        
-        <div style="font-size:16px; font-weight:normal; margin-top:8px;">    
-            {selected_row["description"]} 
-        </div>
-            
-        <div style="font-size:16px; font-weight:normal;  margin-top:32px;">
-            ⭐ <span style ="">{selected_row['tmdb_rating']}</span>
-        </div>
-        
-        <div style="font-size:16px; font-weight:bold; margin-top:8px;">
-            🏷️ <span style="font-weight:normal;">{labels_string}</span>
-        </div>           
-        </div>       
-        """,
-        unsafe_allow_html=True
+    # Building the clean template explicitly without indented spaces inside python markdown wrappers
+    details_html = (
+        f'<div style="padding: 24px; background-color: #FAF9F6; border-radius: 16px; border: 1px solid #E5E4E2; margin-top: 20px;">'
+        f'<div style="font-size: 26px; font-weight: bold; color: #4A7c59; margin-bottom: 12px;">🌸 {html.escape(selected_row["title"])}</div>'
+        f'<div style="font-size: 16px; font-weight: normal; color: #4A4A4A; line-height: 1.6; margin-bottom: 20px;">{html.escape(selected_row["description"])}</div>'
+        f'<div style="font-size: 16px; font-weight: normal; margin-bottom: 8px;">⭐ <span style="font-weight: bold; color: #333;">{selected_row["tmdb_rating"]}</span></div>'
+        f'<div style="font-size: 16px; font-weight: bold; color: #4A7c59;">🏷️ <span style="font-weight: normal; color: #555;">{html.escape(labels_string)}</span></div>'
+        f'</div>'
     )
 
+    st.markdown(details_html, unsafe_allow_html=True)
     st.divider()
 
 # =====================================================
