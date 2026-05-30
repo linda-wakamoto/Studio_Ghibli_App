@@ -84,13 +84,20 @@ set TMDB_API_KEY=your_key_here
 
 ### Step 1: Collect data (TMDB + GHIBLI APIs)
 ```bash
-python ghibli_api_collector.py
-python build_ghibli_entities.py
-python tmdb_api_collector.py
+python data_collectors/ghibli_api_collector.py
+python data_processors/build_ghibli_entities.py
+python data_collectors/tmdb_api_collector.py
 ```
 This generates:
 
 data/processed/ghibli_entities.csv  
+
+The two api collectors contain logging for the data collection process, and adds both ghibli and tmdb api use in the logs folder as "api_collector.log".
+These collectors and build_ghibli_entities also have tests that can be run using:
+
+```bash
+python -m pytest
+```
 
 ---
 
@@ -102,6 +109,11 @@ python data_processors/ghibli_label_tagging.py
 ```
 This sanitizes movie titles (lowercase, normalization), fixes rating data types, appends official landscape image links and manual interest tags, and saves the cleaned dataset to data/processed/.
 The final processed dataset is final_dataset.csv, and has data from all four sources.
+
+These data processors also have tests that can be run using:
+```bash
+python -m pytest
+```
 
 ---
 
@@ -116,14 +128,13 @@ Outputs:
 
 ### Step 4: Train, evaluate, and serialize the model
 ```bash
-python model.py
+python train.py
 ```
-This script acts as the machine learning engine:
-- Compiles and formats feature vectors into a consolidated token mapping array.
-- Validates the system architecture by executing an automated user-profile simulator.
-- Quantifies accuracy via Information Retrieval metrics (Hit Rate @ 5 and Mean Reciprocal Rank).
-- Runs a Monte Carlo simulation over 1,000 random user queries to test system matrix sparsity.
-- Saves the resulting dual-panel diagnostic visualization to jaccard_score_distribution.png and saves the serialized matrices into models/.
+This script acts as the primary data science engine of our machine learning pipeline:
+- **Matrix Engineering:** Extracts and flattens array tokens from categorical vectors (genres, labels, species) using safe ast.literal_eval parsing routines to combine multi-source features into unified content-profile mappings.
+- **Deterministic Serialization:** Maps individual film titles directly to token footprint dictionaries and locks down the training state by saving the finalized, lightweight mathematical token layout directly to models/film_model.pkl.
+- **Sparsity & Evaluation Simulation:** Executes a localized Monte Carlo Simulation over 1,000 randomized user profile request arrays. It stress-tests system matrix density limits, checks global similarity overlaps, and computes empirical performance metrics across top-K target windows.
+- **Diagnostic Visualization:** Automatically outputs a dual-panel analysis matrix saved directly to jaccard_report.png, displaying the historical mathematical distribution metrics for global data sparsity versus active matching scores.
 
 ---
 
