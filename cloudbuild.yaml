@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/ghibli-recommender-418/ghibli-repo/app-service:v1', '-f', 'Dockerfile.app', '.']
+images:
+- 'us-central1-docker.pkg.dev/ghibli-recommender-418/ghibli-repo/app-service:v1'
