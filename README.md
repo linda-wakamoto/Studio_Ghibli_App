@@ -1,4 +1,4 @@
-# Studio Ghibli Data Science Project
+# Studio Ghibli Movie Recommender System & Data Pipeline
 
 ---
 
