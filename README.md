@@ -62,11 +62,6 @@ Windows:
 venv\Scripts\activate
 ```
 
-Mac/Linux:
-```bash
-source venv/bin/activate
-```
-
 ### 3. Install dependencies
 ```bash
 pip install -r requirements_app.txt
@@ -78,11 +73,6 @@ pip install -r requirements.txt
 ## API Keys
 
 ### Set your API key:
-
-**Mac/Linux**
-```bash
-export TMDB_API_KEY="your_key_here"
-```
 
 **Windows**
 ```bash
@@ -316,7 +306,7 @@ Provides:
 ### AI Assistant Documentation
 
 For my project, I used ChatGPT and Google Gemini chatbots to share my code and receive feedback.
-Helpful prompts included describing what I wanted from the model and app, and give a lot of information, such as:
+Helpful prompts included describing what I wanted from the model and app, and giving a lot of information, such as:
 
 "I want to find common traits of Ghibli movies.
 I want labels that matches movies to interests - like:
@@ -329,7 +319,6 @@ it handles messy data issues such as lowercase or uppercase titles, title aliase
 
 I learned that Google Gemini is very useful in looking at tabs and pdf and pictures of my project, 
 and providing code to make my final app UI visually pleasing. I learned about adding emojis and color to my streamlit app
-that I wouldn't have known without these tools. However, I definitely couldn't blindly use all the code they provided,
-and had to make sure that their solutions matched my real data, and debug any issues that arose.
+that I wouldn't have known without these tools. However, I had to make sure that their solutions matched my real data, and debug any issues that arose.
 
 
