@@ -361,7 +361,7 @@ Provides:
 
 - TMDB API used under official terms
 - Studio Ghibli official landscape images are used in compliance with public availability
-- Grave of the Fireflies landscape images are omitted out of respect for Studio Ghibli's explicit decision not to disclose or distribute free promotional screenshot assets for that specific film.
+- Grave of the Fireflies landscape images are omitted out of respect for Studio Ghibli's explicit decision not to disclose or distribute free promotional screenshot assets for that specific film
 - Data used only for academic purposes
 - No personal user data collected 
 
