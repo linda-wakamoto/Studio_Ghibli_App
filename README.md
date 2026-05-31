@@ -76,6 +76,56 @@ graph TD
     style P4 fill:#2cf,stroke:#333,stroke-width:2px
     style M1 fill:#f96,stroke:#333,stroke-width:2px
 ```
+### Diagram Overview
+
+```mermaid
+
+flowchart LR
+
+subgraph S1["1. Data Collection"]
+    A["Ghibli API"]
+    B["TMDB API"]
+    C["Movie Images"]
+end
+
+subgraph S2["2. Data Processing"]
+    D["Clean & Merge Data"]
+    E["Image Matching & Labeling"]
+end
+
+subgraph S3["3. Dataset Creation"]
+    F[("Final Dataset")]
+end
+
+subgraph S4["4. Model Training"]
+    G["Train Recommendation Model"]
+    H["Serialized Model (.pkl)"]
+end
+
+subgraph S5["5. Deployment & Usage"]
+    I["FastAPI Service"]
+    J["Streamlit Web App"]
+    K["End User"]
+end
+
+A --> D
+B --> D
+C --> E
+
+D --> E
+E --> F
+
+F --> G
+G --> H
+
+H --> I
+I --> J
+J --> K
+
+style F fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+style H fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+style J fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
 
 ## Technology Stack & Tools Used
 * **Frontend Interface:** Streamlit (Custom Themed Layout)
