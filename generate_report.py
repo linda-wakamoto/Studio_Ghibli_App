@@ -79,43 +79,41 @@ The goal is to:
 ## Exploratory Data Analysis
 
 ### Word Cloud
-Main themes: human/family, nature, find.
-
+From the film descriptions, the main themes from studio ghibli movies are related to self and family ("girl", "boy", "human", "family"), nature ("sea", "bamboo", "island"), and discovery ("find", "discover").
 ![wordcloud]({figures["wordcloud"]})
 
 ### Ratings Distribution
-Showing right-skewed satisfaction; median 7.79, mean 7.64.
+Ghibli movies show right-skewed ratings, with a median of 7.79, and mean of 7.64.
 
 ![ratings]({figures["ratings"]})
 
 ### Genres
-Most common genres: Animation, Fantasy, Family.
+The most common genres are Animation, Fantasy, Family.
 
 ![genres]({figures["genres"]})
 
 ### Genre Ratings
-Average ratings were similar across genres, but Action and History had the highest.
+The average ratings were similar across genres, but Action and History had the highest.
 
 ![genre_ratings]({figures["genre_ratings"]})
 
 ### Labels
-Most common labels: family and friendship.
+The most common labels were "family" and "friendship".
 
 ![labels]({figures["labels"]})
 
 ### Label Ratings
-Average ratings were similar across labels, but dragons and strong lead had the highest.
+The average ratings were similar across labels, but "dragons" and "strong lead" had the highest.
 
 ![label_ratings]({figures["label_ratings"]})
 
 ### Revenue
-Spirited Away as the peak revenue generator with a remarkably efficient budget, Howl's Moving Castle coming in second.
+Spirited Away had the highest revenue, and Howl's Moving Castle came in second.
 
 ![revenue]({figures["revenue"]})
 
 ### Budget
 Tale of the Princess Kaguya had the highest budget, but Howl's Moving Castle and Spirited Away did not - even with the top two highest revenues.
-
 ![budget]({figures["budget"]})
 
 ### Timeline
@@ -124,13 +122,13 @@ The earliest film was Castle in the Sky and the latest in this dataset was Earwi
 ![timeline]({figures["timeline"]})
 
 ### Species
-Most common species were humans, then cats, and there were 7 species in total.
+The most common species/characters were humans, then cats, and there were 7 different species in total.
 
 ![species]({figures["species"]})
 
 ### Correlation Heatmap
-Shows a comprehensive correlation analysis on all three features of the model, and the highest correlations were between the History genre and Romance genre, castle label and Action genre, and dragon species and Action genre.
-  
+This shows a comprehensive correlation analysis on all three features of the model, and the highest correlations were between the History genre and Romance genre, castle label and Action genre, and dragon species and Action genre.
+
 ![correlation]({figures["correlation"]})
 
 ---
@@ -147,16 +145,23 @@ Similarity metric:
 Jaccard similarity:
 A ∩ B / A ∪ B
 
-Dual-panel distribution modeling global matrix sparsity vs. active top-K return scores for the prediction model:
+These graphs show results from the Jaccard Similarity Matrix that scores how well the movie matches the user input.
+
+Left: Jaccard Similarity scores for all pairwise movie matches across entire catalog
+The spike at 0 shows that most movies have no overlapping genre, labels, species with one another (but the right skew shows there are some).
+
+Right: Scores of top 5 recommendations (how similar are the recommendations)
+The bulk of recommended movies have similarity scores between 0.1 and 0.25 - model finds most relevant matching films for user, and finds the small amount of movies that match well.
 
 ![model]({figures["model"]})
 ---
 
-## Model Highlights
+## Model Evaluation
 
-- Fully interpretable feature-based model
-- Sparse but meaningful feature space
-- Handles cold-start well (no user history needed)
+After performing 1,000 Monte Carlo Runs to simulate user input, I found that:
+- Global Sparsity: The simulation confirms high feature sparsity across the catalog (a massive spike at 0 similarity), proving our movie metadata is highly distinct and descriptive.
+- Top-K Quality: Isolating the top 5 recommendations reveals that the model successfully surfaces the small cluster of highly relevant films.
+- Mean Reciprocal Rank (MRR): Achieves a strong MRR of 0.6402, mathematically proving that the most relevant, highest-scoring movies consistently land in the 1st and 2nd spots of the user's grid.
 
 ---
 
