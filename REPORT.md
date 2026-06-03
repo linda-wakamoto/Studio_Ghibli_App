@@ -94,6 +94,7 @@ Jaccard similarity:
 A ∩ B / A ∪ B
 
 These graphs show results from the Jaccard Similarity Matrix that scores how well the movie matches the user input.
+
 Left: Jaccard Similarity scores for all pairwise movie matches across entire catalog
 The spike at 0 shows that most movies have no overlapping genre, labels, species with one another (but the right skew shows there are some).
 
